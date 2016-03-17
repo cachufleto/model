@@ -1,0 +1,8 @@
+name = montoken
+description = Mon module token
+package = Groupe DIWoo
+core = 7.x
+dependencies[] = token
+; srcipts[] = js/fichier.js
+; ceci est un commentaire
+ 

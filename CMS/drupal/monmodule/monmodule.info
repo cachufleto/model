@@ -1,0 +1,4 @@
+name = monmodule
+description = module annuaire
+core = 7.x
+package = Groupe DIWoo

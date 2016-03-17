@@ -1,0 +1,23 @@
+name = monthemeperso
+description = Voici notre theme !
+package = Core
+version = VERSION
+core = 7.x
+
+stylesheets[all][] = css/style.css
+scripts[] = js/fichier.js
+;scripts[] = js/jquery-1.12.0.min.js
+
+regions[haut-gauche] = R1 zone du haut a gauche 
+regions[haut-milieu] = R2 zone du haut au milieu 
+regions[haut-droite] = R3 zone du haut a droite 
+regions[menu] = R4 zone du menu 
+regions[content] = R5 zone du contenu principal 
+regions[aside] = R6 zone de la barre laterale 
+regions[bas-gauche] = R7 zone du bas a gauche 
+regions[bas-milieu] = R8 zone du bas au milieu 
+regions[bas-droite] = R9 zone du bas a droite 
+regions[bas-bas] = R10 zone tout en bas 
+regions[en-avant] = R11 zone entre menu et contenu 
+regions[maregion_vehicule] = R12 zone pour contenu vehicule 
+

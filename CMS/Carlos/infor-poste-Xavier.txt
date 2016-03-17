@@ -1,0 +1,10 @@
+Configuration IP de Windows
+
+   Nom de l'hôte . . . . . . . . . . : labo18-poste22
+   
+
+   Adresse IPv4. . . . . . . . . . . . . .: 192.168.105.208(préféré)
+   Masque de sous-réseau. . . . . . . . . : 255.255.252.0
+   Passerelle par défaut. . . . . . . . . : 192.168.104.1
+   Serveur DHCP . . . . . . . . . . . . . : 10.2.0.1
+   

@@ -1,0 +1,35 @@
+DRUPAL
+------
+
+thème drupal:
+http://drupal.org/project/project_theme
+
+Module drupal
+http://drupal.org/project/project_module
+
+Langue:
+https://localize.drupal.org/translate/downloads
+
+
+
+Configuration pour WAMP:
+------------------------
+clic gauche sur l'icone de wamp > apache > apache modules > activer Rewrite_module (active les urls simplifiées)
+
+clic gauche sur l'icone de wamp > php > ouvrir php.ini et à la ligne SMTP = localhost, mettre le bon smtp de votre FAI
+
+clic gauche sur l'icone de wamp > php > ouvrir php.ini > checher max_execution_time (mettre à 900)
+En cas de souci aller dans /includes/locale.inc 
+autour de la ligne 635 relever la limite de 240 à 900
+
+
+
+
+
+
+
+
+
+
+
+

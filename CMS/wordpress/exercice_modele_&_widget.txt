@@ -1,0 +1,24 @@
+EXERCICE:
+Faire un nouveau modele de page.
+=> full-page
+
+Sur ce modèle, le contenu doit faire 100% du conteneur
+
+Faire une page avec ce modele: mentions légales
+
+//--------------------------------------------
+
+Ensuite créer une nouvelle zone à widget:
+=> ma_zone_footer
+
+Placer cette zone afin de l'avoir au niveau du footer (100% de la largeur).
+
+- mettre un widget menu personnalisé
+	- créer un nouveau menu avec les liens "Qui sommes nous" - "Contact" - "Mentions légales" - "Notre équipe"
+	- le mettre en forme afin d'avoir les quatres liens alignés horizontalement
+	
+	
+	
+	
+	
+	

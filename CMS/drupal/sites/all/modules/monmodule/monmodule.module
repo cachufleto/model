@@ -1,0 +1,146 @@
+<?php
+
+// HOOK DRUPAL
+// https://api.drupal.org/api/drupal/includes%21module.inc/group/hooks/7
+
+// Le développement de drupal s'articule autour d'un système de hook. Il s'agit de fonctions réalisant une opération précise dans le site.
+// Convention d'écriture nomdumodule_nomdu_hook exemple:
+// hook_form() => monmodule_form()
+
+// hook_menu()
+// https://api.drupal.org/api/drupal/modules%21system%21system.api.php/function/hook_menu/7
+// la fonction hook_menu route les url de votre site. ce hook manipule un tableau ARRAY qui associe l'url a des fonction de callback
+
+function monmodule_menu() {
+	$items = array();
+	$items['admin/annuaire'] = array( // url
+	'title' 			=> 'Annuaire', // titre du menu
+	'description' 		=> 'Formulaire pour annuaire',
+	'page callback' 	=> 'drupal_get_form', // 'page callback' => une fonction utilisée pour écrire dans la page // drupal_get_form => pour générer le formulaire.
+	'page arguments'	=> array('monmodule_form'), // exécuté pour construire le formulaire
+	'type'				=> MENU_NORMAL_ITEM, // lien accessible
+	'access callback'	=> true, // ligne obligatoire.
+	'access arguments' => array('access administration pages'), // permet de gérer les droits sur le module
+	);
+	return $items;
+}
+
+
+// https://api.drupal.org/api/drupal/developer!topics!forms_api_reference.html/7
+// https://api.drupal.org/api/drupal/modules!node!node.api.php/function/hook_form/7
+// hook_form()
+// $form: le formulaire a rajouter ou a éditer
+// &$form_state: un tableau ARRAY
+
+function monmodule_form($form, &$form_state)
+{
+	$form['prenom'] = array(
+	'#type'			=> 'textfield',
+	'#title'		=> 'Votre prénom',
+	'#size' 		=> 10,
+	'#maxlength' 	=> 20,
+	'#required'		=> true,
+	);
+	$form['nom'] = array(
+	'#type'			=> 'textfield',
+	'#title'		=> 'Votre Nom',
+	'#maxlength' 	=> 20,
+	'#description'	=> 'Veuillez saisir votre nom',
+	);
+	$form['telephone'] = array(
+	'#type'			=> 'textfield',
+	'#title'		=> 'Votre Téléphone',
+	'#maxlength' 	=> 10,
+	'#description'	=> 'Veuillez saisir téléphone',
+	'#required'		=> true,
+	);
+	$form['submit_button'] = array(
+	'#type'			=> 'submit',
+	'#value'		=> 'Ok',
+	);
+	
+	return $form;
+}
+
+
+// https://api.drupal.org/api/drupal/modules!node!node.api.php/function/hook_validate/7 (à vérifier)
+// https://api.drupal.org/api/drupal/includes%21form.inc/function/form_set_error/7
+// form_set_error($name, $message);
+// $name => le name du champs
+// $message => le message d'erreur a afficher.
+
+function monmodule_form_validate($form, &$form_state)
+{
+	if(empty($form_state['values']['nom']))
+	{
+		form_set_error('nom', 'Erreur sur le nom');
+	}
+}
+
+// https://api.drupal.org/api/drupal/includes%21form.inc/function/drupal_form_submit/7
+// hook_form_submit()
+function monmodule_form_submit($form, &$form_state)
+{
+	drupal_set_message('Contact enregistré !');
+	db_insert('monmodule_annuaire')
+	->fields(array(
+	'prenom' => $form_state['values']['prenom'],
+	'nom' => $form_state['values']['nom'],
+	'telephone' => $form_state['values']['telephone'],
+	))
+	->execute();
+	// https://api.drupal.org/api/drupal/includes!database!database.inc/function/db_insert/7
+}
+
+
+// https://api.drupal.org/api/drupal/modules%21block%21block.api.php/function/hook_block_info/7
+// hook_block_info()
+// permet de déclarer un block
+
+function monmodule_block_info() 
+{
+	// fonction permettant d'obtenir le block dans la liste structure/block
+	$blocks['monmodule_affichage'] = array(
+		'info'	=> 'Block permettant l\'affichage de l\'annuaire',
+		'cache'	=> DRUPAL_CACHE_PER_ROLE, // permet la gestion par role.
+	);
+	return $blocks;
+}
+
+// https://api.drupal.org/api/drupal/modules%21block%21block.api.php/function/hook_block_view/7
+// subject => le titre du block // s'il n'y a pas de titre, il faut lui donner la valeur NULL
+// content => body du block
+
+function monmodule_block_view($delta = '')
+{
+	$block['subject'] = 'Affichage des contacts';
+	$block['content'] = '';
+	
+	if(user_access('access content')) // renvoi TRUE si l'utilisateur a les droits
+	{
+		$result = db_query("SELECT * FROM monmodule_annuaire");
+		if($result->rowCount() > 0) // s'il y a plus d'une ligne
+		{
+			$block['content'] .= $result->rowCount() . ' contact';
+			if($result->rowCount() > 1) { $block['content'] .= 's'; }
+			
+			$block['content'] .= '<ul>';
+			foreach($result AS $data)
+			{
+				$block['content'] .= '<li>'. $data->nom . ' - ' . $data->prenom . ' - ' . $data->telephone . '</li>';
+			}
+			$block['content'] .= '</ul>';			
+		}
+		else {
+			$block['content'] .= 'Pas de contact dans l\'annuaire !';
+		}	
+	}
+	return $block;
+}
+
+
+
+
+
+
+

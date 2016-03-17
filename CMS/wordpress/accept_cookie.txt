@@ -1,0 +1,310 @@
+/**
+ *
+ * POUR METTRE UNE BARRE D'ACCEPTATION DES COOKIES SUR SON SITE WORDPRESS
+ *
+ */
+  
+/!\ JQuery est nécessaire.
+
+arborescence:
+racine template
+	- cookieconsentbar (dossier)
+		- sb.cookieconsentbar.js
+		- sb.cookieconsentbar.css
+
+placez le dossier cookieconsentbar à la racine de votre thème.
+Placez le code ci-dessous dans le fichier function.php de votre thème.
+
+
+// Place the following code in your theme's functions.php file
+// Cookie Consent Bar
+function cookieconsentbar(){
+        ?>
+<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'template_url' ); ?>/cookieconsentbar/sb.cookieconsentbar.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/cookieconsentbar/sb.cookieconsentbar.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$.sbCookieConsentBar({
+			message: 'Ce site utilise des cookies pour optimiser votre expérience de navigation. En continuant votre visite sur notre site, vous consentez à l’utilisation de Cookies. ',
+			acceptButton: true,
+			acceptText: 'Accepter',
+			declineButton: false,
+			declineText: 'Refuser',
+			policyButton: false,
+			policyText: 'En savoir plus',
+			policyURL: '/cookies/',
+			acceptOnContinue: false,
+			effect: 'slide',
+			element: 'body',
+			fixed: true,
+			bottom: true
+				});
+			});
+		</script>
+     <?php
+}
+add_action('wp_head','cookieconsentbar',1,20);
+
+
+
+declineButton: Mettre true pour afficher le bouton de Refus/Désactiver.
+declineText: Texte du bouton de Refus/Désactiver.
+
+policyButton: Mettre true pour afficher le lien En savoir plus.
+policyText: Texte du lien En savoir plus.
+
+policyURL: URL du lien En savoir plus.
+Soit un lien direct http://
+
+effect: Options d’effets jQuery : slide, fade, hide.
+
+fixed: Mettre true pour ajouter la position fixed à la barre. Par défaut le CSS doit fixer la position.
+bottom: Forcer le CSS a positionner la barre en bas du site avec fixed:true
+
+
+
+
+
+/**
+ *
+ * CSS
+ *
+ */
+ 
+/* BARRE */
+#cookie-consent-bar {
+	background:#f6f6f6; 
+	min-height:24px; 
+	line-height:24px; 
+	color:#595959; 
+	text-align:center; 
+	padding:3px 0; 
+	width:100%; /* opacity bar :
+	opacity: 0.6; 
+	filter: alpha(opacity=60); */
+	}
+#cookie-consent-bar:hover { /* opacity bar :
+	opacity: 1.0;
+	filter: alpha(opacity=100); */
+	}
+#cookie-consent-bar.fixed {
+	position:fixed; 
+	bottom:0; 
+	left:0; 
+	z-index:100;
+	}
+/* TEXTE */
+#cookie-consent-bar p {
+	margin:0; 
+	padding:0 10px; 
+	font-size:12px;
+	}
+/* LIEN */
+#cookie-consent-bar a {
+	color:#ffffff; 
+	display:inline-block; 
+	border-radius:3px; 
+	text-decoration:none; padding:0 6px;
+	}
+/* BOUTON ACCEPTER */
+#cookie-consent-bar .sb-enable {
+	background:#46aa51;
+	margin:0 8px;
+	}
+#cookie-consent-bar .sb-enable:hover {
+	background:#6ec478;
+	}
+/* BOUTON REFUSER */	
+#cookie-consent-bar .sb-disable {
+	background:#e41b40;
+	margin:0 8px;
+	}
+#cookie-consent-bar .sb-disable:hover {
+	background:#e93f5e;
+	}
+/* EN SAVOIR PLUS */
+#cookie-consent-bar .sb-policy {
+	text-decoration:underline;
+	margin:0 2px;
+	}
+#cookie-consent-bar .sb-policy:hover {
+	text-decoration:underline;
+	}
+
+
+
+	
+
+/**
+ *
+ * EN CAS DE REFUS
+ *
+ */	
+	
+
+Si un utilisateur choisit de désactiver les cookies (Si vous leur donnez cette possibilité en affichant le bouton Refuser), vous devez vous assurer que les scripts tels que Google Analytics et autres, seront bien désactivés.
+
+Ceci peut être réalisé en enroulant le code dans un simple if.
+
+<script type="text/javascript">
+			if(jQuery.sbCookieConsentBar('cookies')){
+				//Inserer Google Analytics par exemple :
+			}
+		</script>
+
+		
+Exemple de code complet
+-----------------------
+<script type="text/javascript">
+			if(jQuery.sbCookieConsentBar('cookies')){
+				//Inserer Google Analytics par exemple :
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+				ga('create', 'UA-XXXXXXXX-X', 'auto');
+				ga('send', 'pageview');
+			}
+		</script> 	
+
+
+/**
+ *
+ * EN CAS D'ACCEPTATION
+ *
+ */			
+ 
+ Si l’utilisateur accepte le dépôt de cookies, le temps que mettra la barre pour réapparaitre est fixé à 1 an = 365 jours. Si vous souhaitez augmenter ce temps et le passer à 13 mois ( durée maximale recommandée par la CNIL ) ou diminuer ce temps pour quelques raisons que ce soit. Vous devrez ajouter et modifier cette option dans le premier code.
+
+ 
+expireDays: 365,
+
+
+
+
+
+/**
+ *
+ * POUR UNE UTILISATION HORS WORDPRESS
+ *
+ */	
+ 
+ 
+Modifiez le code : le lien de l’appel CS et JS.
+Remplacez< ? php bloginfo( 'template_url' ); ? > par http://www.adressedemonsite.com/
+Placer le code dans l’en-tête de votre site au dessus de la balise < / head >
+
+<link rel="stylesheet" type="text/css" href="http://www.adressedemonsite.com/cookieconsentbar/cookieconsentbar.css" />
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script type="text/javascript" src="http://www.adressedemonsite.com/cookieconsentbar/cookieconsentbar.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$.sbCookieConsentBar({
+			message: 'Ce site utilise des cookies pour optimiser votre expérience de navigation. En continuant votre visite sur notre site, vous consentez à l’utilisation de Cookies. ',
+			acceptButton: true,
+			acceptText: 'Accepter',
+			declineButton: false,
+			declineText: 'Refuser',
+			policyButton: false,
+			policyText: 'En savoir plus',
+			policyURL: '/cookies/',
+			acceptOnContinue: false,
+			effect: 'slide',
+			element: 'body',
+			fixed: true,
+			bottom: true
+				});
+			});
+		</script>
+		
+		
+/**
+ *
+ * sb.cookieconsentbar.js
+ *
+ */ 
+
+		
+/* Copyright (C) 2014 Sebastien Bosquet - http://www.sebastienbosquet.com */
+(function($){$.sbCookieConsentBar=function(options,val){if(options=='cookies'){var doReturn='cookies'}else if(options=='set'){var doReturn='set'}else{var doReturn=false}var defaults={message:'En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de Cookies.',acceptButton:true,acceptText:'Accepter',declineButton:false,declineText:'Refuser',policyButton:false,policyText:'Information sur les cookies',policyURL:'/cookies/',autoEnable:true,acceptOnContinue:false,expireDays:365,forceShow:false,effect:'slide',element:'body',append:false,fixed:true,bottom:true,zindex:'',redirect:String(window.location.href),domain:String(window.location.hostname),referrer:String(document.referrer)};var options=$.extend(defaults,options);var expireDate=new Date();expireDate.setTime(expireDate.getTime()+(options.expireDays*24*60*60*1000));expireDate=expireDate.toGMTString();var cookieEntry='cookies-consent-bar-enabled={value}; expires='+expireDate+'; path=/';var i,cookieValue='',aCookie,aCookies=document.cookie.split('; ');for(i=0;i<aCookies.length;i++){aCookie=aCookies[i].split('=');if(aCookie[0]=='cookies-consent-bar-enabled'){cookieValue=aCookie[1]}}if(cookieValue==''&&options.autoEnable){cookieValue='enabled';document.cookie=cookieEntry.replace('{value}','enabled')}if(options.acceptOnContinue){if(options.referrer.indexOf(options.domain)>=0&&String(window.location.href).indexOf(options.policyURL)==-1&&doReturn!='cookies'&&doReturn!='set'&&cookieValue!='accepted'&&cookieValue!='declined'){doReturn='set';val='accepted'}}if(doReturn=='cookies'){if(cookieValue=='enabled'||cookieValue=='accepted'){return true}else{return false}}else if(doReturn=='set'&&(val=='accepted'||val=='declined')){document.cookie=cookieEntry.replace('{value}',val);if(val=='accepted'){return true}else{return false}}else{var message=options.message.replace('{policy_url}',options.policyURL);if(options.acceptButton){var acceptButton='<a href="" class="sb-enable">'+options.acceptText+'</a>'}else{var acceptButton=''}if(options.declineButton){var declineButton='<a href="" class="sb-disable">'+options.declineText+'</a>'}else{var declineButton=''}if(options.policyButton){var policyButton='<a href="'+options.policyURL+'" class="sb-policy">'+options.policyText+'</a>'}else{var policyButton=''}if(options.fixed){if(options.bottom){var fixed=' class="fixed bottom"'}else{var fixed=' class="fixed"'}}else{var fixed=''}if(options.zindex!=''){var zindex=' style="z-index:'+options.zindex+';"'}else{var zindex=''}if(options.forceShow||cookieValue=='enabled'||cookieValue==''){if(options.append){$(options.element).append('<div id="cookie-consent-bar"'+fixed+zindex+'><p>'+message+acceptButton+declineButton+policyButton+'</p></div>')}else{$(options.element).prepend('<div id="cookie-consent-bar"'+fixed+zindex+'><p>'+message+acceptButton+declineButton+policyButton+'</p></div>')}}$('#cookie-consent-bar .sb-enable').click(function(){document.cookie=cookieEntry.replace('{value}','accepted');if(cookieValue!='enabled'&&cookieValue!='accepted'){window.location=options.currentLocation}else{if(options.effect=='slide'){$('#cookie-consent-bar').slideUp(300,function(){$('#cookie-consent-bar').remove()})}else if(options.effect=='fade'){$('#cookie-consent-bar').fadeOut(300,function(){$('#cookie-consent-bar').remove()})}else{$('#cookie-consent-bar').hide(0,function(){$('#cookie-consent-bar').remove()})}return false}});$('#cookie-consent-bar .sb-disable').click(function(){var deleteDate=new Date();deleteDate.setTime(deleteDate.getTime()-(864000000));deleteDate=deleteDate.toGMTString();aCookies=document.cookie.split('; ');for(i=0;i<aCookies.length;i++){aCookie=aCookies[i].split('=');if(aCookie[0].indexOf('_')>=0){document.cookie=aCookie[0]+'=0; expires='+deleteDate+'; domain='+options.domain.replace('www','')+'; path=/'}else{document.cookie=aCookie[0]+'=0; expires='+deleteDate+'; path=/'}}document.cookie=cookieEntry.replace('{value}','declined');if(cookieValue=='enabled'&&cookieValue!='accepted'){window.location=options.currentLocation}else{if(options.effect=='slide'){$('#cookie-consent-bar').slideUp(300,function(){$('#cookie-consent-bar').remove()})}else if(options.effect=='fade'){$('#cookie-consent-bar').fadeOut(300,function(){$('#cookie-consent-bar').remove()})}else{$('#cookie-consent-bar').hide(0,function(){$('#cookie-consent-bar').remove()})}return false}})}}})(jQuery);
+
+
+/**
+ *
+ * sb.cookieconsentbar.css
+ *
+ */ 	
+ 
+ 
+/**********************************************************
+// cookie-consent-bar >> bar
+**********************************************************/
+#cookie-consent-bar {
+	background:#f6f6f6; 
+	min-height:24px; 
+	line-height:24px; 
+	color:#595959; 
+	text-align:center; 
+	padding:3px 0; 
+	width:100%; /* opacity bar :
+	opacity: 0.6; 
+	filter: alpha(opacity=60); */
+	}
+#cookie-consent-bar:hover { /* opacity bar :
+	opacity: 1.0;
+	filter: alpha(opacity=100); */
+	}
+#cookie-consent-bar.fixed {
+	position:fixed; 
+	bottom:0; 
+	left:0; 
+	z-index:100;
+	}
+/**********************************************************
+// cookie-consent-bar >> text
+**********************************************************/
+#cookie-consent-bar p {
+	margin:0; 
+	padding:0 10px; 
+	font-size:12px;
+	}
+/**********************************************************
+// cookie-consent-bar >> link
+**********************************************************/
+#cookie-consent-bar a {
+	color:#ffffff; 
+	display:inline-block; 
+	border-radius:3px; 
+	text-decoration:none; padding:0 6px;
+	}
+/**********************************************************
+// cookie-consent-bar >> button >> enable
+**********************************************************/
+#cookie-consent-bar .sb-enable {
+	background:#46aa51;
+	margin:0 8px;
+	}
+#cookie-consent-bar .sb-enable:hover {
+	background:#6ec478;
+	}
+/**********************************************************
+// cookie-consent-bar >> button >> disable
+**********************************************************/
+#cookie-consent-bar .sb-disable {
+	background:#e41b40;
+	margin:0 8px;
+	}
+#cookie-consent-bar .sb-disable:hover {
+	background:#e93f5e;
+	}
+/**********************************************************
+// cookie-consent-bar >> policy
+**********************************************************/
+#cookie-consent-bar .sb-policy {
+	text-decoration:underline;
+	margin:0 2px;
+	}
+#cookie-consent-bar .sb-policy:hover {
+	text-decoration:underline;
+	}

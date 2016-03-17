@@ -1,0 +1,73 @@
+https://www.drupal.org/node/1089656
+https://www.drupal.org/node/190815
+
+Fichiers de Templates (Du plus spécifique au moins spécifique):
+		Block/
+			1. base template: block.tpl.php 
+			2. block--module--delta.tpl.php
+			3. block--module.tpl.php : block--menu.tpl.php
+			4. block--region.tpl.php : block--haut.tpl.php
+		
+			
+		Comment/	
+			1. base template: comment.tpl.php	
+			2. comment--node-[type].tpl.php : comment--node-article.tpl.php
+			
+			(ce qui entoure les commentaires):
+			1. base template: comment-wrapper.tpl.php
+			2. comment-wrapper--node-[type].tpl.php
+		
+		Fields/
+			1. base template: field.tpl.php
+			2. field--[type|name[--content-type]|content-type].tpl.php
+			3. field--field-name--content-type.tpl.php
+			4. field--content-type.tpl.php
+			5. field--field-name.tpl.php
+			3. field--field-type.tpl.php
+		
+		Forums/
+			1. base template: forums.tpl.php
+			2. forums--[[container|topic]--forumID].tpl.php
+    
+			Pour les containers de forum:
+			1. forums--containers--forumID.tpl.php
+			2. forums--forumID.tpl.php
+			3. forums--containers.tpl.php
+
+			Pour les forums de topics:
+			1. forums--topics--forumID.tpl.php
+			2. forums--forumID.tpl.php
+			3. forums--topics.tpl.php
+
+		Maintenance/
+			1. base template: maintenance-page.tpl.php
+			2. maintenance-page--[offline].tpl.php
+	
+		Node/
+			1. base template: node.tpl.php
+			2. node--[type|nodeid].tpl.php
+			3. node--nodeid.tpl.php
+			4. node--type.tpl.php
+			5. node.tpl.php
+
+		Page/
+			1. base template: page.tpl.php
+			2. page--[front|internal/path].tpl.php : page--front.tpl.php 
+			3. page--node--edit.tpl.php
+			4. page--node--1.tpl.php ou page--node--%.tpl.php
+			5. page--node.tpl.php
+			6. page.tpl.php
+			7. page--node--edit.tpl.php : pour modifier l'affichage de template lors de la modification d'un noeud.
+
+		Profiles/ (ce template est utilisé lorsqu'on navigue sur la liste des users)
+			1. base template: profile-wrapper.tpl.php
+			2. profile-wrapper--[field].tpl.php
+	
+		Régions/ (ce template fonctionne quand la région n'est pas vide)
+			1. base template: region.tpl.php
+			2. region--[region].tpl.php
+	
+		Search/
+			1. base template: search-results.tpl.php
+			2. search-results--[searchType].tpl.php
+	

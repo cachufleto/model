@@ -1,0 +1,65 @@
+<?php
+
+// HOOK DRUPAL
+// https://api.drupal.org/api/drupal/includes%21module.inc/group/hooks/7
+
+// Le développement de drupal s'articule autour d'un système de hook. Il s'agit de fonctions réalisant une opération précise dans le site.
+// Convention d'écriture nomdumodule_nomdu_hook exemple:
+// hook_form() => monmodule_form()
+
+
+// hook_token_info() => permet de déclarer un token
+// https://api.drupal.org/api/drupal/modules%21system%21system.api.php/function/hook_token_info/7
+
+function montoken_token_info() {
+  $info = array();
+  // on déclare un nouveau type de token
+  $info['types']['mes_tokens_persos'] = array(
+		'name' => 'Mes tokens persos',
+		'description' => 'Token de type perso',
+  );
+  // on déclare nos token
+  $info['tokens']['mes_tokens_persos']['tokenperso'] = array(
+		'name' => 'token perso',
+		'description' => 'Un token qui dit bonjour',
+  );
+  return $info;	
+}
+
+// Affectation de la valeur du ou des tokens
+// hook_tokens()
+// https://api.drupal.org/api/drupal/modules%21system%21system.api.php/function/hook_tokens/7
+
+function montoken_tokens($type, $tokens, array $data = array(), array $options = array()) 
+{
+	
+	$replacements = array();
+	if($type == 'mes_tokens_persos')
+	{
+		foreach($tokens AS $name => $original)
+		{
+			// on cherche notre token
+			switch($name)
+			{
+				case 'tokenperso':
+					$value = 'Bonsoir à tous !';
+					// on affecte maintenant sa valeur
+					$replacements[$original] = $value;
+				break;
+			}
+		}
+	}
+	return $replacements;
+}
+
+
+
+
+
+
+
+
+
+
+
+

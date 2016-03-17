@@ -1,0 +1,48 @@
+DRUPAL module => CKEDITOR
+-------------------------
+- installer le module drupal ckeditor (c'est le conteneur de l'éditeur)
+	https://www.drupal.org/project/ckeditor
+	- installer et activer
+	
+- ensuite aller chercher l'editeur:
+	http://ckeditor.com/download
+	- choisir la version (full)
+	- placer le contenu de l'archive ici:
+moninstallationdrupal/sites/all/module/ckeditor/ckeditor
+	( là où se trouve le fichier COPY_HERE.txt)
+
+- ensuite aller chercher ckfinder:
+	https://cksource.com/ckfinder/download
+	- placer le contenu de l'archive ici:
+moninstallationdrupal/sites/all/module/ckeditor	
+
+
+- ensuite aller sur admin/config/content/ckeditor
+
+- Configuration:
+	- editor apparence
+		- choisir les outils de l'éditeur.
+		- cocher les options de plugins si necessaire.(le plugin embeded est nécessaire pour les vidéos.)
+	
+	File browser settings:
+		- mettre ckfinder dans les trois listes déroulantes.
+	
+	CSS:
+		- utiliser le css du thème
+		
+	OPTIONS AVANCEES:
+		- rajouter dans configuration javascript personnalisée:
+		config.allowedContent = true; 
+		=> pour permettre de mettre des class css notamment directement depuis l'éditeur.
+		exemple: <div class="maclass"></div>
+		
+	
+	
+ENSUITE:
+- aller sur admin/config/content/ckeditor/editg
+- mettre dans Local path to CKEditor : le chemin d'accès au module. Normalement: sites/all/modules/ckeditor (à adapter si nécessaire.)
+	
+	
+	
+	
+	

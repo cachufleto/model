@@ -1,0 +1,33 @@
+WORDPRESS
+----------
+
+Theme enfant
+------------
+- Choisir un thème et l'installer.
+- créer un dossier du même nom que le thème et rajouter -child à l'emplacement: wp-content/themes/
+	- exemple: theme twentysixteen => twentysixteen-child
+
+- A la racine de notre thème enfant créer un fichier style.css
+
+- Le fichier css doit commencer par ces lignes: 
+(à adapter selon le theme parent)
+
+/*
+Theme Name:		twentysixteen Child
+Description:	Mon thème basé sur le thème twentysixteen
+Author:			Moi
+Template:		twentysixteen
+*/
+@import url('../twentysixteen/style.css');
+	
+	
+- ne pas hésiter à changer le screenshot.
+
+- créer un fichier functions.php à la racine du thème enfant où l'on pourra mettre nos propre fonctions.
+
+/!\ Tous les fichiers du thèeme enfant auront la priorité sur ceux du thème parent sauf functions.php pour lequel celui du thème enfant sera appelé avant celui du thème parent.
+
+
+
+
+	

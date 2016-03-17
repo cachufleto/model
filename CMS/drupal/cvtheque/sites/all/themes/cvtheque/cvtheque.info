@@ -1,0 +1,24 @@
+name = cvtheque
+description = Template site MEDIA pour IFOCOP
+package = Core
+version = VERSION
+core = 7.x
+stylesheets[all][] = media.css
+
+; Information added by Drupal.org packaging script on 2016-02-24
+version = "7.43"
+project = "drupal"
+datestamp = "1456343506"
+regions[connexion] = Zone droite entete
+regions[haut-gauche] = R1 zone du haut a gauche
+regions[haut-milieu] = R2 zone du haut au milieu
+regions[haut-droite] = R3 zone du haut a droite
+regions[menu] = R4 zone du menu
+regions[content] = R5 zone du contenu principal
+regions[aside] = R6 zone de la barre laterale
+regions[bas-gauche] = R7 zone du bas a gauche
+regions[bas-milieu] = R8 zone du bas au milieu
+regions[bas-droite] = R9 zone du bas a droite
+regions[footer] = zone tout en bas
+regions[en-avant] = R11 zone entre menu et contenu
+regions[maregion_vehicule] = R12 zone pour contenu vehicule

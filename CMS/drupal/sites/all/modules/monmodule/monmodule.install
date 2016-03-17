@@ -1,0 +1,16 @@
+<?php
+
+// un fichier .install se lance en premier lors de l'activation du module, cela sert en général à créer des tables ou des champs dans la BDD.
+// .install également utilisé lors de l'update du module
+// https://www.drupal.org/node/876250
+
+function monmodule_schema() {
+	db_query("CREATE TABLE IF NOT EXISTS monmodule_annuaire( 
+		id_annuaire int(3) NOT NULL AUTO_INCREMENT,
+		prenom varchar(20) NOT NULL,
+		nom varchar(20) NOT NULL,
+		telephone int(10) unsigned zerofill NOT NULL,
+		PRIMARY KEY (id_annuaire)
+	)ENGINE=InnoDB DEFAULT CHARSET=latin1;");
+}
+// db_query nous permet d'exécuter une requete sur la BDD.

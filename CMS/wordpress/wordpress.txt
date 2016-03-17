@@ -1,0 +1,53 @@
+[Arborescence]
+--------------
+
+wp-include/ 
+- regroupe toute la logique de wordpress, pour toutes les fonctionnalités natives.(hors administration)
+
+wp-content/
+- Contient les extensions et thème installés, uploads ... pour notre projet.
+
+wp-admin/
+- permet de regrouper les pages et fonctionnalités de l'interface d'administration.
+
+
+[Base de données]
+-----------------
+- wp_commentmeta et wp_comments => la sauvegarde des commentaires sur les publications du site.
+- wp_links était utilisée dans les anciennes versions et toujours présente pour compatibilité
+- wp_options contient les valeurs de configuration du site comme le slogan.
+- wp_postmeta & wp_posts stockent le contenu des publications du site, que ce soit les pages, les articles, les menus. Il existe un systeme de version des pages et des articles représentées chacune par un ligne de la table wp_posts
+- wp_term_relationships & wp_term_taxonomy & wp_terms contiennent les informations relatives aux catégories, tags ainsi que leur lien avec les différents articles et page du site.
+- wp_usermeta & wp_users maintiennent les données utilisateur.
+
+Pour créer un compte administrateur.
+------------------------------------
+
+INSERT INTO wp_users (user_login, user_pass, user_nicename, user_email, user_status) VALUES ('admin2', MD5('admin2'), 'Admin2', 'admin2@mail.fr', '0' );
+
+INSERT INTO wp_usermeta (umeta_id, user_id, meta_key, meta_value) VALUES (NULL, (SELECT max(id) FROM wp_users), 'wp_capabilities', 'a:1:{s:13:"administrator";s:1:"1";}');
+
+INSERT INTO wp_usermeta (umeta_id, user_id, meta_key, meta_value) VALUES (NULL, (SELECT max(id) FROM wp_users), 'wp_user_level', '10');
+
+
+Différence entre une page et un article:
+----------------------------------------
+- Un page est un type de contenu prévu pour rester aussi longtemps que le site existe.
+- Un article est plus souvent une actualité éphémère.
+
+Lorsqu'un contenu est sauvegardé, la fonction save_post s'exécute. Il est possible d'accrocher un hook pour y ajouter un traietement complémentaire.
+add_action() permet d'accrocher un hook
+exemple: <?php add_action('save_post', 'mafonction'); ?>
+
+
+
+
+
+
+
+
+
+
+
+
+

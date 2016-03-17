@@ -1,0 +1,156 @@
+body {
+	background-color: #f2f2f2;
+	margin: 0;
+	font-family: calibri;
+}
+.conteneur {
+	max-width: 1170px;
+	margin: 0 auto;
+}
+.clear {
+	clear: both; /* casse le flux float */
+}
+/*** HEADER ***/
+header {
+	min-height: 80px;
+/* 	padding: 10px 0; */
+	border-bottom: 1px solid #c0c0c0;
+}
+.haut-gauche {
+	float: left;
+	min-height: 80px;
+	width: 24%;
+	margin-right: 1%;
+/* 	background-color: red; */
+}
+.haut-milieu {
+	width: 50%;
+	min-height: 80px;
+	float: left;
+/* 	background-color: tomato; */
+}
+.haut-droite {
+	float: left;
+	min-height: 80px;
+	width: 24%;
+	margin-left: 1%;	
+/* 	background-color: darkred; */
+}
+
+/*** NAV ***/
+nav {
+	min-height: 32px;
+	background-color: #c0c0c0;
+}
+#block-system-main-menu .menu li {
+	display: inline-block;
+	text-align: center;
+	min-height: 30px;
+	line-height: 30px;
+}
+#block-system-main-menu .menu li a {
+	color: white;
+	padding: 5px 10px;
+	text-decoration: none;
+}
+#block-system-main-menu .menu li:hover {
+	background-color: black;
+}
+ul.menu {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/*** SECTION ***/
+section {
+	background-color: white;
+	min-height: 500px;
+}
+main {
+	min-height: 500px;
+	width: 75%;
+/* 	background-color: Bisque; */
+	float: left;
+}
+aside {
+	min-height: 500px;
+	width: 24%;
+	margin-left: 1%;
+/* 	background-color: RosyBrown; */
+	float: left;
+}
+
+
+/*** FOOTER ***/
+.bas-gauche {
+	float: left;
+	min-height: 80px;
+	width: 24%;
+	margin-right: 1%;
+	padding-top: 20px;
+/* 	background-color: red; */
+}
+.bas-milieu {
+	width: 50%;
+	min-height: 80px;
+	float: left;
+	padding-top: 20px;
+/* 	background-color: tomato; */
+}
+.bas-droite {
+	float: left;
+	min-height: 80px;
+	width: 24%;
+	margin-left: 1%;
+	padding-top: 20px;	
+/* 	background-color: darkred; */
+}
+.bas-bas {
+	min-height: 80px;
+/* 	background-color: pink; */
+}
+
+/*** contenu 100% ***/
+.pleine-largeur {
+	width: 100% !important;
+}
+
+/*** NODE VEHICULE ***/
+.info_vehicule {
+	width: 30%;
+	float: left;
+	min-height: 200px;
+	padding: 20px;
+}
+.info_vehicule .field-label, .info_vehicule .field-items {
+	/* padding-left: 1em; */
+}
+.photo_vehicule {
+	width: 65%;
+	float: left;
+	min-height: 200px;
+}
+
+
+/*** VUE CATALOGUE VEHICULE ***/
+
+.page-catalogue .region-content .info_vehicule{
+	display: none;
+}
+
+.page-catalogue  .region-content .views-row {
+	float: left;
+	width: 42%;
+	padding: 20px;
+	border: 1px solid #333;
+	margin: 10px;
+}
+
+.page-catalogue .region-content .views-field-title a {
+	color: #333;
+	text-transform: uppercase;
+}
+
+
+
+

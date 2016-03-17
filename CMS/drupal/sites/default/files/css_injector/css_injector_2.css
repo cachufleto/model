@@ -1,0 +1,60 @@
+#node-3 img {
+    max-width: 100%;
+}
+hr {
+    border: 1px solid darkred;
+}
+#block-webform-client-block-8 input {
+    max-width: 100%;
+}
+
+/*** MENU DEROULANT PRINCIPAL ***/
+ul.nice-menu li {
+    background-color: #c0c0c0;
+}
+ul.nice-menu-down li.menuparent {
+    background-color: #c0c0c0;
+}
+ul.nice-menu a {
+    color: #333;
+    text-decoration: none;
+    
+}
+ul.nice-menu-down li.menuparent:hover, ul.nice-menu li:hover  {
+    background-color: black;
+}
+
+ul.nice-menu a:hover {
+    color: white;
+}
+
+/*** MENU ANONYME ET MEMBRE ***/
+.region-haut-droite ul li {
+    list-style: none;
+    text-align: right;
+}
+.region-haut-droite ul li a {
+    color: #333;
+    text-decoration: none;
+}
+.region-haut-droite ul li a:hover {
+    text-decoration: underline;
+}
+.region-haut-droite ul {
+    margin-bottom: 20px;
+}
+
+.region-haut-droite #edit-search-block-form--2 {
+    width: 64%;
+}
+.region-haut-droite #edit-actions {
+    width: 28%;
+}
+
+.breadcrumb {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+.en-avant p {
+    margin-top: 0;
+}

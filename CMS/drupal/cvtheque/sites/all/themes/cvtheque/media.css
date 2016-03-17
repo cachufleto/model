@@ -1,0 +1,167 @@
+
+/**
+ * @file
+ * Stark layout method
+ *
+ * To avoid obscuring CSS added to the page by Drupal or a contrib module, the
+ * Stark theme itself has no styling, except just enough CSS to arrange the page
+ * in a traditional "Header, sidebars, content, and footer" layout.
+ *
+ * This layout method works reasonably well, but shouldn't be used on a
+ * production site because it can break. For example, if an over-large image
+ * (one that is wider than 20% of the viewport) is in the left sidebar, the
+ * image will overlap with the #content to the right. The exception to this
+ * is IE6 which will just hide the navigation block completely in these
+ * instances due to a positioning bug.
+ */
+
+body {
+  background-color: rgba(11, 84, 136, 0.38);
+}
+
+#conteneur {
+  background-color: rgba(254, 254, 254, 1);
+}
+
+#conteneur,
+#content,
+#sidebar-first,
+#sidebar-second {
+  float: left;
+  display: inline;
+  position: relative;
+}
+
+#conteneur {
+  width: 80%;
+  margin: 0 10%;
+}
+
+#entete {
+  color: #1587DA;
+  width: 100%;
+  background-color: rgba(11, 84, 136, 0.38);
+  height: 70px;
+}
+
+#entete .logo {
+  float: left;
+  width: 15%;
+  margin: 0;
+  height: 50px;
+}
+
+#entete .slogan {
+  float: left;
+  width: 45%;
+  margin: 0 4%;
+  height: 50px;
+  text-align: center;
+}
+
+#entete .connexion {
+  float: left;
+  width: 30%;
+  margin: 0;
+  text-align: right;
+  padding-top: 10px;
+  height: 50px;
+}
+
+#entete .connexion a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+#entete ul.menu,
+#entete ul.menu li,
+#footer ul.menu,
+#footer ul.menu li {
+  display: inline;
+  list-style: none;
+}
+
+
+#navigation{
+  border-bottom: antiquewhite solid 5px;
+}
+
+#fil-ariane{
+  color: #1587DA;
+  padding: 0;
+  margin-left:10px ;
+}
+
+#fil-ariane .breadcrumb {
+  float: left;
+}
+
+#fil-ariane .breadcrumb a {
+  color: #1587DA;
+  text-decoration: none;
+}
+
+#footer {
+  color: #1587DA;
+  border-top: antiquewhite solid 5px;
+  padding-top:5px;
+  -moz-border-top-left-radius: 15px;
+  -moz-border-top-right-radius: 15px;
+/*  border-top-left-radius:  15px; */
+/*  border-top-right-radius:  15px; */
+  text-align-all: center;
+}
+#footer .content {
+  text-align: center;
+}
+
+#footer #block-block-1 {
+  padding-top: 10px;
+  font-style: italic;
+  font-size: small;
+}
+
+#footer ul.menu {
+  padding: 0;
+}
+
+#footer a {
+  text-decoration: none;
+  color: #1587DA;
+}
+
+#footer  li  {
+  display:inline-block;
+  padding-right: 10px;
+}
+
+
+body.sidebar-first #conteneur {
+  width: 80%;
+  left: 20%; /* LTR */
+}
+body.sidebar-second #conteneur {
+  width: 80%;
+}
+body.two-sidebars #conteneur {
+  width: 60%;
+  left: 20%;
+}
+
+#sidebar-first {
+  width: 20%;
+  left: -80%; /* LTR */
+}
+
+body.two-sidebars #sidebar-first {
+  left: -60%; /* LTR */
+}
+
+#sidebar-second {
+  float: right; /* LTR */
+  width: 20%;
+}
+
+.section {
+  margin: 10px;
+}

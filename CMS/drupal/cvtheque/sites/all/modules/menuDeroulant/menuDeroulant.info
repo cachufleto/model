@@ -1,0 +1,7 @@
+name = menuDeroulant
+description = Génération du menu à plusieurs niveaux
+package = Developpeur-php-ifocop
+core = 7.x
+files[] = menuDeroulant.install
+files[] = menuDeroulant.module
+stylesheets[all][] = menuDeroulant.css

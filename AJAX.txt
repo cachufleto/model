@@ -1,0 +1,53 @@
+
+
+var un = 'texte';
+var deux = 47.2;
+var trois = true;
+
+var boite ={
+	un = 'text';
+	deux = 47.2;
+	trois = true;
+};
+
+boite.quatre = 'un autre texte';
+
+AJAX
+agent javacript découple du html
+
+XMLHttpRequest()
+
+https://api.jquery.com/jquery.get/
+
+$(document).ready(function(){
+	$('a').click(function(event){
+		// si une acction est d'office à faire, on casse l'action
+		event.preventDefault();
+		$.get($(this).attr('href'),function(data){
+			$('#fileContent').html(data);
+		})
+	})
+})
+
+vrifier la console
+console.log($a)
+nous constatons que jquery est présent pour l objet lui même
+
+--------------------------
+JQuery UI
+--------------------------
+plugin mobile JQuery
+--------------------------
+
+https://www.w3.org/TR/XMLHttpRequest/
+
+cette methode  est propre a JQuery
+load( $(this).attr('value') );
+
+Ajax dans sont état pure ON NE LE VERAS PAS
+
+SNCF export csv des horaires des trains
+enregistrer le document au bon format pour inport en SQL
+
+
+

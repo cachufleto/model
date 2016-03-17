@@ -1,0 +1,179 @@
+
+
+CMS
+wordpress -> blog
+drupal -> site guv
+prestashop -> plus compliqué - e-commerce
+magento -> e-commerce
+
+https://fr.wordpress.com/ site gratuit
+
+module rewrite_module à activer
+
+activer SMTP sur php.ini
+
+widget -> block sur la droite
+
+extentions -> des modules complet
+
+wapalyzer
+Lorem ipsum
+
+Apparence, Thèmes, ajouter, mettre un thème en ligne, filtre de fonctionalités
+mystaging.fr
+
+\wp_config.php
+
+creation d'un theme enfant
+creer un dossier 'theme'-child
+
+creer un fichier css: style.css
+ajouter:
+/*
+Theme Name:		twentyfifteen Child
+Description:	Mon thème basé sur le thème twentyfifteen
+Author:			Moi
+Template:		twentyfifteen
+*/
+@import url('../twentyfifteen/style.css');
+	
+
+si probléme, creer un fichier function.php
+
+------------------------------------
+Modules ou extentions
+
+formulaire envoyées par Mail
+Contact Form 7
+
+WP related posts
+extentoin .... en fin d'article
+dans les widgets
+
+------------------------------------
+
+pour creer un admin...
+
+deux requettes en BDD directement
+INSERT INTO wp_users (
+user_login,
+user_pass,
+user_nicname,
+user_email,
+user_status
+
+) VALUES ('...', MD5('...'), '...', '...@...', '0');
+
+INSERT INTO wp_usermeta(
+umeta_id, 
+user_id, 
+meta_key,
+meta_value
+) VALUES (
+NULL,
+(SELECT max(id) FROM wp_users),
+'wp_capabilities',
+'a:1:{s:13:"administrator";s:1:"1";}'
+);
+
+INSERT INTO wp_usermeta (
+umeta_id, 
+user_id, 
+meta_key,
+meta_value
+) VALUES (
+NULL,
+(SELECT max(id) FROM wp_users),
+'wp_user_level',
+'10'
+);
+
+??? fonction permet d'accrocher un hook ???
+<?php add_action('save_post', 'mafonction');?>
+
+----------------------------------
+
+intervention sur les fichiers qui constituent le template....
+modification pour personaliser les presentations
+
+-----------------------
+template
+
+header.php
+footer.php
+
+page.php
+single.php
+category.php
+comments.php
+
+404.php
+search.php
+sidebar.php
+sidebar-footer.php
+
+--------------------------
+
+
+page-3colonnes.php
+
+modificartion des commentaires
+pour lui donner un nom
+// Template Name: 3-colonnes
+il serà listé dans l'attribution des templates pour les nouvelles pages crées
+
+dans functions.php
+register_sidebar(array(....));
+
+register_sidebar(array(
+	'name' => 'Ma zone perso',
+	'id' => 'Ma_zone_perso',
+	'description' => 'Ma zone colonne de gauche',
+	'before_widget' => '<aside id="%1$s" class="%2$s">',
+	'after_widget' => '</aside>',
+	'after_widget' => '</aside>',
+	));
+	
+intégration das le CMS
+dynamic_sidebar(id);
+dynamic_sidebar('Ma_zone_perso');
+
+checker dans "apparence" et alimenter son contenue avec des widgets
+
+-----------------------------
+
+si probleme existe, penser à desactiver les plugins ou le theme en renomant le dossier dans wp_plugin ou wp_theme
+
+-----------------------------
+
+Securiser le site wp
+iThemes Security - Dashboard
+
+filter, permet de faire des traitements
+
+add_filter( 'functionWp' , 'maFunction');
+
+function maFunction($arg){.....}
+
+hook, permet de rajouter une action
+
+
+function maFunction($arg){.....}
+
+add_action('functionWp', 'maFunction');
+
+
+
+
+
+skeleton -> site de themes theme de base
+Smpl Skeletom
+
+veifier les lines permaliens
+
+
+css 
+whid calc(50% - 40px);
+
+-------------------------
+

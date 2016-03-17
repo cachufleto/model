@@ -1,0 +1,170 @@
+DRUPAL
+Acquia.com
+
+changement dans le fonctionement des templetes
+
+drupalfr.org
+V. 7.4.1
+Actuel V8.0.1 
+
+V detravail 7.4.1
+
+http://drupal.org/project/project_theme
+http://drupal.org/project/project_module
+
+https://localize.drupal.org/translate/downloads
+
+activer le module Rewrite_module
+
+dans php.ini
+changer le SMTP 
+upload_max_filesize selon les besoins
+max_execution_time à 900
+en cas de souci aller sur DRUPAL
+/includes/locale.inc ->> ligne 635 +-
+relever la limite également
+
+verifier l'existance d'un BDD pour l'instal
+les installation du site est dans SITE/
+
+module toolsbar:
+pour ajouter des racourcis
+tableau de bord -> clicker sur administration, choix + ou - sur le titre de l'onglet
+activer les performances
+
+architecture de la base est basée sur des nodes.
+une page acueille un node
+un node est un contenue qui possede un type
+----> gestion des pages
+voir sur structure -> types de contenu
+
+toutes les pages aurent un id et une classe "node-#"
+On peux apliquer des CSS
+
+définir la Page d'accueil par défaut
+Accueil » Administration » Configuration » Système >> informations
+http://localhost/drupal/ifocop/?q=node/1
+
+MODULES
+Accueil » Administration >> modules
+ils peuvent ou pas avoir des dépendances
+
+Update manager -> permet de faire des intégrations des modules
+par URL ou à la mano
+
+MODULES
+Pathauto
+Token
+
+
+Themes -> apparence
+le theme est appelé par son nom dans les fonctions
+function {theme}_nom_function(){}
+
+le template:
+html.tpl.php
+
+defaut dans ./modules/system
+
+Gestion des droit des user pour l'utilisations des modules.... Rôles
+Accueil » Administration » Personnes
+
+CKedit CKfinder
+parametrages specificques
+parametre js dans options avances
+config.allowedContent = true; --> pose problème
+
+creation d'un type de contenu
+Accueil » Administration » Structure » Types de contenu
+rectifier le path dans l'admin
+Accueil » Administration » Configuration » Recherche et metadonnées » Alias d'URL
+
+Module qui recherche les traductions 
+l10n
+I18n
+
+webform
+adminmenu
+
+webform
+le rendre en bloc pour une meilleur intégration
+parametres avances
+
+theme:: le mêtre est .info
+changer le name
+la mise en forme : html.tpl.php
+changer la racinne des noms des fonctions
+
+
+CSS casse le flop css et retabli en fonction des class apelles
+.clear{
+	clear: both;
+}
+
+function qui appel l'information assigné dans le bloc definie
+render($page['block']);
+
+
+
+Notion de Vue pour lister des articles
+module viewUI
+template
+choix de la page pour l'affichage
+création d'une vue
+definition d'un format de sorti
+possibilité de faire une prévisue
+donner des droit
+definir en BLOC
+cibler une page en particulier
+modifier le css et l'structure html de l'affichage
+
+
+Token custom...
+pour creer un module pour l'ajourter avec un token
+activer "remplacer tokens" dans format de texte option Full HTML,..
+Hooks DRUPAL
+convention: rennomer hooks par le nom du module perso
+fichiers:
+.info
+.module (code PHP)
+documentation https://www.drupal.org/node/542202
+Contents
+
+name required
+description recommended
+core required
+stylesheets
+scripts[]
+files[]
+dependencies[]
+package // emplacement dans la page des modules²
+php
+version discouraged
+configure
+required
+hidden
+project Discouraged, packaging use only
+project status url Only used for custom modules not submitted to drupal.org
+
+creer en dossier au niveau des modules
+/site/all/modules/monToken
+creer les fichiers:
+/site/all/modules/monToken/monToken.info
+/site/all/modules/monToken/monToken.module
+OPTIONEL
+/site/all/modules/monToken/monToken.install
+
+https://api.drupal.org/api/drupal/includes%21module.inc/group/hooks/7
+
+-------------------------------------------------------------
+INTALLER GMAP? LIBRERY ET LOCATION
+Affichage d'uine localisation
+-------------------------------------------------------------
+
+installer un module
+il faut creer un dossier dans
+/site/all/modules/monmodule/
+creer les fichiers:
+/site/all/modules/monmodule/monmodule.info
+/site/all/modules/monmodule/monmodule.install
+

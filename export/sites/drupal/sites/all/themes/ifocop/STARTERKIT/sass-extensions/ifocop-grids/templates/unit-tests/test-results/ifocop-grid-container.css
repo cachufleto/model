@@ -1,0 +1,40 @@
+/**
+ * @file
+ * Test ifocop-grid-container()
+ */
+#test-ifocop-grid-container {
+  /* Test ifocop-grid-container() */
+}
+#test-ifocop-grid-container:before, #test-ifocop-grid-container:after {
+  content: "";
+  display: table;
+}
+#test-ifocop-grid-container:after {
+  clear: both;
+}
+
+#test-ifocop-grid-container-2 {
+  /* Test ifocop-grid-container() with $legacy-support-for-ie7: true */
+  *position: relative;
+  *zoom: 1;
+}
+#test-ifocop-grid-container-2:before, #test-ifocop-grid-container-2:after {
+  content: "";
+  display: table;
+}
+#test-ifocop-grid-container-2:after {
+  clear: both;
+}
+
+#test-ifocop-grid-container-3 {
+  /* Test ifocop-grid-container() with $legacy-support-for-ie6: true */
+  *position: relative;
+  *zoom: 1;
+}
+#test-ifocop-grid-container-3:before, #test-ifocop-grid-container-3:after {
+  content: "";
+  display: table;
+}
+#test-ifocop-grid-container-3:after {
+  clear: both;
+}

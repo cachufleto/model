@@ -1,0 +1,38 @@
+/**
+ * @file
+ * Test ifocop-grid-item-width()
+ */
+
+@import "ifocop";
+
+#test-ifocop-grid-item-width {
+  /* Test ifocop-grid-item-width(1) with default $ifocop-column-count: 1 */
+  width: ifocop-grid-item-width(1);
+
+  /* Test ifocop-grid-item-width(2) with $ifocop-column-count: 5 */
+  $ifocop-column-count: 5;
+  width: ifocop-grid-item-width(2);
+  $ifocop-column-count: 1;
+
+  /* Test ifocop-grid-item-width(2, 5) */
+  width: ifocop-grid-item-width(2, 5);
+
+  /* Test ifocop-grid-item-width(1) with $ifocop-grid-width: 100px */
+  $ifocop-grid-width: 100px;
+  width: ifocop-grid-item-width(1);
+  $ifocop-grid-width: 100%;
+
+  /* Test ifocop-grid-item-width(2, 5) with $ifocop-grid-width: 100px */
+  $ifocop-grid-width: 100px;
+  width: ifocop-grid-item-width(2, 5);
+  $ifocop-grid-width: 100%;
+
+  /* Test ifocop-grid-item-width(2, 5, $grid-width: 1000px) */
+  width: ifocop-grid-item-width(2, 5, $grid-width: 1000px);
+
+  /* Test ifocop-grid-item-width(2, 5, $grid-width: 1000px, $box-sizing: content-box) */
+  width: ifocop-grid-item-width(2, 5, $grid-width: 1000px, $box-sizing: content-box);
+
+  /* Test ifocop-grid-item-width(2, 5, $gutter-width: 10px, $grid-width: 1000px, $box-sizing: content-box) */
+  width: ifocop-grid-item-width(2, 5, $gutter-width: 10px, $grid-width: 1000px, $box-sizing: content-box);
+}

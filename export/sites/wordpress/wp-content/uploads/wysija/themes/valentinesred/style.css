@@ -1,0 +1,54 @@
+/*
+Theme Name: Valentines Day Red
+Description: Valentines Days Template to send to your customers
+Author: Easy Fast Wordpress
+Author URI: http://easyfastwordpress.com
+Author Email: info@easyfastwordpress.com
+Tags: red, Valentines Day, February
+
+Note: the styles below offer all the possibilities of Wysija. The plugin won't recognize any additional styles if you add them.
+
+*/
+html {
+    background-color: #f82950; /* cannot be transparent and will default to white */
+}
+
+header {
+    background-color: transparent; /* can be transparent */
+}
+body {
+    color:#4a0c18;
+    font-family: "Arial";
+    font-size: 12px;
+    background-color: #ffffff; /* can be transparent */
+}
+footer {
+    background-color: transparent; /* can be transparent */
+}
+h1 {
+    color: #f82950;
+    font-family: "Arial";
+    font-size: 36px;
+}
+h2 {
+    color: #f95473;
+    font-family: "Arial";
+    font-size: 30px;
+}
+h3 {
+    color: #fb94a7;
+    font-family: "Arial";
+    font-size: 24px;
+}
+a {
+    color: #ae1d38;
+    text-decoration:underline;
+}
+unsubscribe {
+    color:#ffffff;
+}
+viewbrowser {
+	font-family:'Arial';
+	font-size:11px;
+	color:#ffffff;
+}

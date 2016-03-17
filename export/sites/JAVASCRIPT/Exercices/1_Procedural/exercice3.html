@@ -1,0 +1,35 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>JavaScript : Exercice 3</title>
+		<meta charset="UTF-8" />
+		<script type="text/javascript">
+			/*	Réalisez le programme (algorithme) suivant : Au CHARGEMENT du document, j'affiche une B.d.D contenant le message "Voulez vous continuer ?". TANT QUE l'utilisateur clique sur OK j'affiche une b.d.d avec le message "Voulez vous continuer ?".
+			Necessite l'utilisation de l'attribut d'évenement onload, de la fonction confirm() / d'une boucle while	*/
+
+			var confirmation = function(i){
+				return confirm(i + " Voulez vous continuer ?");
+			}
+
+			var question = function(){
+				var i = 0;
+				var question=true;
+				// control d'incémentation dans ma boucle while
+				while(question && i++ < 3){
+					question=confirmation(i);
+					// i++;
+				}
+				if(question) alert('Trop de tentatives');
+				else  alert('Merci et à la prochaine');
+			}
+		</script>
+	</head>
+	<body onload="question()">
+		<h1>Exercice 3</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

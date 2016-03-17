@@ -1,0 +1,16 @@
+/**
+ * @file
+ * Test ifocop-direction-flip()
+ */
+#test-ifocop-direction-flip {
+  /* Test ifocop-direction-flip(left) */
+  float: right;
+  /* Test ifocop-direction-flip(right) */
+  float: left;
+  /* Test ifocop-direction-flip(both) */
+  float: both;
+  /* Test ifocop-direction-flip(none) */
+  float: none;
+  /* Test ifocop-direction-flip(invalid) */
+  float: both;
+}

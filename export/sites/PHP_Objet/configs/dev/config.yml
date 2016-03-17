@@ -1,0 +1,5 @@
+classes:
+  - name:"Hello\Bob"
+  tags:
+  - name: "bob"
+  - name: "Hello\Sss"

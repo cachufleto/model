@@ -1,0 +1,43 @@
+name        = ifocop
+description = ifocop sub-themes are the ultimate starting themes for Drupal 7. Read the <a href="https://drupal.org/node/873778">online docs</a> or the included README-FIRST.txt on how to create a theme with ifocop.
+screenshot  = ifocop-internals/screenshot.png
+
+core        = 7.x
+engine      = phptemplate
+
+stylesheets[all][] = system.menus.css
+
+regions[header]         = 1 Header
+regions[navigation]     = 2 Navigation bar
+regions[highlighted]    = 3 Highlighted
+regions[help]           = 4 Help
+regions[content]        = 5 Content
+regions[sidebar_first]  = 6 First sidebar
+regions[sidebar_second] = 7 Second sidebar
+regions[footer]         = 8 Footer
+regions[bottom]         = 9 Page bottom
+regions[page_top]       = 10 Page top
+regions[page_bottom]    = 11 Page bottom
+
+settings[ifocop_breadcrumb]           = yes
+settings[ifocop_breadcrumb_separator] = ' › '
+settings[ifocop_breadcrumb_home]      = 1
+settings[ifocop_breadcrumb_trailing]  = 0
+settings[ifocop_breadcrumb_title]     = 0
+settings[ifocop_layout]               = ifocop-responsive-sidebars
+settings[ifocop_skip_link_anchor]     = main-menu
+settings[ifocop_skip_link_text]       = Jump to navigation
+settings[ifocop_html5_respond_meta][] = respond
+settings[ifocop_html5_respond_meta][] = html5
+settings[ifocop_html5_respond_meta][] = meta
+settings[ifocop_rebuild_registry]     = 0
+settings[ifocop_wireframes]           = 0
+
+plugins[panels][layouts] = panels-layouts
+
+; Information added by Drupal.org packaging script on 2015-12-01
+version = "7.x-5.6"
+core = "7.x"
+project = "ifocop"
+datestamp = "1448957644"
+

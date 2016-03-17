@@ -1,0 +1,29 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>JavaScript : Exercice 13</title>
+		<meta charset="UTF-8" />
+		<script type="text/javascript"> 
+			/*
+				Réalisez le programme (algorithme) suivant : Quand je CLIQUE sur mon paragraphe, j'affiche une B.d.D avec champ de saisie à l'utilisateur. L'utilisateur DOIT impérativement saisir une chaine de caractère. Cette chaine de caractère est ensuite utilisée pour ouvrir une nouvelle fenêtre à l'aide de la fonction open.
+			*/
+			
+			
+			
+			var maFonction = function(){
+					var truc=prompt("Saisir une URL : ");
+					while(truc=="" || truc==null || !isNaN(parseFloat(truc))){
+						truc=prompt("vous ne devez pas saisir de nombre");	
+					}
+					alert("Merci!!! Une nouvelle fenêtre va s'ouvrir");
+					open(truc,truc,'directories=no,menubar=no');
+			}
+		</script>
+	</head>
+	<body>
+		<p onclick="maFonction();">Mon nouveau document</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

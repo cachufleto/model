@@ -1,0 +1,57 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>JavaScript : Exercice 8</title>
+		<meta charset="UTF-8" />
+		<script type="text/javascript">
+			/*
+				La fonction parseFloat(?) est une fonction qui prend entrée une information. SI cette information est un nombre, elle retourne le nombre correspondant. SINON elle retourne un code d'erreur : NaN. (Not A Number). Cette fonction est fréquemment utilisée pour transformer des valeurs exprimées en px, em, %, ... en nombres manipulables.
+			*/
+			
+			/*1.
+				Réalisez le programme (algorithme) suivant : Au CHARGEMENT du document,  j'affiche une boite de dialogue (B.d.D) avec un champ de saisie à l'utilisateur. PUIS, utilisez la fonction parseFloat pour transformer la saisie utilisateur obtenue. Afficher le résultat de la transformation dans une B.d.D.
+
+				Nécessite l'utilisation de l'attribut d'événement onload / de la fonction prompt() / de la fonction alert() / de la fonction parseFloat
+			*/
+				var maFonction = function(){
+					var truc=prompt("Saisir : ");
+					if(truc!="" && truc!=null){
+						alert(isNaN(parseFloat(truc)));
+					}
+				}
+			/*
+				La fonction isNaN(?) est une fonction qui prend entrée une variable. SI cette variable n'est pas un nombre, la fonction retourne true, SINON elle retourne false.
+			*/
+
+			/*2.
+				Améliorez le programme (algorithme) précédent : Au CHARGEMENT du document, j'affiche une boite de dialogue (B.d.D) avec un champ de saisie à l'utilisateur. PUIS, utilisez la fonction parseFloat pour transformer la saisie utilisateur obtenue. PUIS, utilisez la fonction isNaN avec le résultat de cette transformation pour obtenir une valeur de vérification. Affichez le résultat de cette valeur de vérification dans une B.d.D.
+
+				Nécessite l'utilisation de l'attribut d'événement onload / de la fonction prompt() / de la fonction alert() / de la fonction parseFloat() / de la fonction isNaN()
+			*/
+
+			/*3.
+				Réalisez le programme (algorithme) suivant : Quand je CLIQUE sur le premier paragraphe, je demande à l'utilisateur de saisir un nombre. SI l'utilisateur n'a pas saisi un nombre, j'affiche le message "Vous devez saisir un nombre.". SINON, j'affiche le message "Merci d'avoir saisi un nombre."
+
+				Nécessite l'utilisation de l'attribut d'événement onclick / de la fonction prompt() / de la fonction alert() / de la fonction parseFloat() / de la fonction isNaN() / d'un bloc conditionnel if... else...
+			*/
+			var maFonction2 = function(){
+					var truc=prompt("Saisir : ");
+					if(truc!="" && truc!=null){
+						if(isNaN(parseFloat(truc))){
+							alert("vous devez saisir un nombre");
+						} else {
+							alert("Merci!!!");
+						}
+					}
+				}
+		</script>
+	</head>
+	<body onload="maFonction();">
+		<h1>Mon nouveau document</h1>
+		<p  onclick="maFonction2();">Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

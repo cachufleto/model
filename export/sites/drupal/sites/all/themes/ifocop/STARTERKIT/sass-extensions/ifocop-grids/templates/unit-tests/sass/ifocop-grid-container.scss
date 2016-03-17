@@ -1,0 +1,27 @@
+/**
+ * @file
+ * Test ifocop-grid-container()
+ */
+
+@import "ifocop";
+
+#test-ifocop-grid-container {
+  /* Test ifocop-grid-container() */
+  @include ifocop-grid-container();
+}
+
+#test-ifocop-grid-container-2 {
+  /* Test ifocop-grid-container() with $legacy-support-for-ie7: true */
+  $legacy-support-for-ie7: true;
+  @include ifocop-grid-container();
+  $legacy-support-for-ie7: false;
+}
+
+#test-ifocop-grid-container-3 {
+  /* Test ifocop-grid-container() with $legacy-support-for-ie6: true */
+  $legacy-support-for-ie6: true;
+  $legacy-support-for-ie7: true;
+  @include ifocop-grid-container();
+  $legacy-support-for-ie6: false;
+  $legacy-support-for-ie7: false;
+}

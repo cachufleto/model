@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>JavaScript : Exercice 16</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript">
+			/*
+				Créer un tableau JavaScript contenant 5 urls.
+			*/
+
+			/*
+				Réalisez le programme (algorithme) suivant : TANT QUE je n'ai pas parcouru toutes les cases du tableau, j'utilise l'url contenue dans la case du tableau sur laquelle je suis pour ouvrir une nouvelle fenêtre. Nécessite une boucle while... avec un compteur de tours.
+			*/
+			
+			var urls = ['https://developer.mozilla.org/fr/docs/Web/JavaScript','http://www.w3schools.com/js/','http://www.ecmascript.org/docs.php','http://www.toutjavascript.com/main/index.php3','http://www.codecademy.com/fr/tracks/javascript'];
+			var compteur = 0;
+			while(compteur < 5){
+				open(urls[compteur],'Site','directories=no,menubar=no');
+				compteur++;
+			}
+		</script>
+	</head>
+	<body>
+		<p>Mon nouveau document</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

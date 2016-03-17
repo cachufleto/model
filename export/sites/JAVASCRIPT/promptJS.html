@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta  charset="Utf-8>">
+	</head>
+	<body>
+	
+		<h1>Varaibles : </h1>
+		<script type="text/javascript">
+		
+			var tableauDD = new Array();
+			tableauDD['semaine'] = ['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'];
+			tableauDD['mois'] = ['Janvier', 'Fevrier'];
+			
+			alert(prompt(
+				tableauDD.semaine[1] + ' / ' + tableauDD.mois[1]
+			));
+			
+			// on déclare une variable pour l'utilisation posterieur
+			var retour = prompt(
+				tableauDD.semaine[1] + ' / ' + tableauDD.mois[1]
+			)
+			
+			alert(retour);
+			
+		</script>
+	</body>
+</html>

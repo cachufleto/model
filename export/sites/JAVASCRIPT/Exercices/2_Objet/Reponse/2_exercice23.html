@@ -1,0 +1,99 @@
+<!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>JavaScript : Exercice 23</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript"> 
+			//Enoncé :
+			/*
+				En JavaScript la plupart des fonctions de base du langage sont en réalité des méthodes disponibles dans des objets. On dispose par exemple, de base, d'un objet en mémoire dans la variable navigator. Cet objet comporte un ensemble de propriétés contenant des informations relatives au navigateur en train d'exécuter le code.
+			*/
+
+			/*
+				Au chargement du document, affichez dans une boite de dialogue le contenu de la propriété appName de l'objet dans la variable navigator. Puis affichez le contenu de la propriété userAgent dans une boite de dialogue.
+
+				Qu'est-ce qui s'affiche sur IE, Mozilla, Safari ?
+
+			*/
+				var afficheNavigateur = function(){
+					var version = navigator.appName;
+					var agent = navigator.userAgent;
+					alert(version + ' //// ' + agent);
+				};
+			/*
+			
+				Utilisez ces propriétés pour réaliser l'algorithme suivant : SI je démarre mon script sur IE, j'affiche une boite de dialogue avec le texte 'So Lame !' à l'intérieur et j'ouvre une PoPUp vers le site de Mozilla Firefox, SINON SI je démarre mon script sur Chrome j'affiche une boite de dialogue avec le texte 'Spy On Me !' et j'ouvre une PoPUp vers la page wikipédia de http://fr.wikipedia.org/wiki/Chromium_%28navigateur_web%29 SINON j'affiche une boite de dialogue avec le texte 'Freed from Desire'.
+				
+				Attention, il faut paramétrer éventuellement cet exercice en fonction des versions de navigateurs disponibles sur votre ordinateur (
+			*/
+			
+			// selon les versions des navigateurs
+			var testNavigateur = function(){
+				var agentNav = navigator.userAgent;
+				if(agentNav == 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0E; MDDS; .NET4.0C; rv:11.0) like Gecko'){
+					alert('So Lame !');
+					open('https://www.mozilla.org/fr/firefox/new/','Firefox','directories=no,menubar=no');
+				}
+				else{
+					if (agentNav == 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36'){
+						alert('Spy On Me !');
+						open('http://fr.wikipedia.org/wiki/Chromium_%28navigateur_web%29','Chrome infos','directories=no,menubar=no');
+					}
+					else{
+						alert('Freed from Desire');
+					}
+				}
+				}
+				
+			// avec la methode split(X) (appartenant à l'objet string de javascript)
+			// cette méthode retourne un tableau avec 
+			// indice [0] : la chaine de caractère située AVANT l'argument X
+			// indice [1] : la chaine de caractère située APRES l'argument X
+			
+			var testNavigateur_2 = function(){
+				var agentNav = navigator.userAgent;
+				var moteur_ie=agentNav.split('Trident/'); // ou moteur 'chakra' pour EDGE. (faire une recherche)
+				var moteur_chrome=agentNav.split('AppleWebKit/'); // ou moteur 'blink' plus recent
+				var moteur_mozilla=agentNav.split('Gecko/');
+				
+				if(moteur_ie[1]!=undefined){
+					alert('So Lame !');
+					open('https://www.mozilla.org/fr/firefox/new/','Firefox','directories=no,menubar=no');
+				} else {
+					if(moteur_chrome[1]!=undefined){
+							alert('Spy On Me !');
+							open('https://www.mozilla.org/fr/firefox/new/','Firefox','directories=no,menubar=no');
+					} else {
+						if(moteur_mozilla[1]!=undefined){
+								alert('Freed from Desire');
+						} else {
+								alert('Moteur de rendu non trouvé');
+						}
+					}
+				}
+			}
+			
+			
+		</script>
+	</head>
+	<body onload="testNavigateur_2();">
+		<h1 onclick ="afficheNavigateur();">Titre</h1>
+		<div>
+			<div>
+				<h2>Titre 1</h2>
+				<p>paragraphe <span>1.1</span></p>
+				<p>paragraphe <span>1.2</span></p>
+				<p>paragraphe <span>1.2</span></p>
+			</div>
+			<div>
+				<h2>Titre 2</h2>
+				<p>paragraphe <span>2.1</span></p>
+				<p>paragraphe <span>2.2</span></p>
+				<p>paragraphe <span>2.3</span></p>
+			</div>
+		</div>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

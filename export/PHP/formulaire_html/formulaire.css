@@ -1,0 +1,15 @@
+*{
+  font-family: calibri;
+}
+label {
+  float: left;
+  clear: both;
+  width: 140px;
+  font-style: italic;
+  color: steelblue;
+}
+h1 {
+  padding: 10px;
+  color: white;
+  background-color: steelblue;
+}

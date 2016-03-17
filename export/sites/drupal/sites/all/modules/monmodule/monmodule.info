@@ -1,0 +1,5 @@
+; MODULE Mon Module
+name  = monmodule
+description = Mon Module Personnalisé
+core = 7.x
+package = Groupe DIWoo

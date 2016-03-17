@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>JavaScript : Exercice 25</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript"> 
+			//Enoncé :
+			/*
+				En JavaScript la plupart des fonctions de base du langage sont en réalité des méthodes disponibles dans des objets. On dispose par exemple, de base, d'un objet contenant toutes les informations relatives à la fenêtre affichée du navigateur. Cet objet est disponible dans la variable window.
+			*/
+
+			/*
+				Explorons ensemble ce que contient window
+			*/
+
+			// window.alert(window.document);
+			var docuCharge = function(){
+				//window.alert(window.document.body);
+				//window.alert(window.document.body.style);
+				//window.document.body.style.backgroundColor = 'red';
+				 var objetHTML = window.document.getElementById('cela');
+				//alert(objetHTML);
+				objetHTML.innerHTML = 'Ceci est un texte rajouté par mon script';
+				objetHTML.style.borderBottom = '100px solid pink';
+			};
+		</script>
+	</head>
+	<body>
+		<h1 onclick="docuCharge();">Titre</h1>
+		<div>
+			<div>
+				<h2>Titre 1</h2>
+				<p id="ceci">paragraphe <span>1.1</span></p>
+				<p>paragraphe <span>1.2</span></p>
+				<p id="cela">paragraphe <span>1.2</span></p>
+			</div>
+			<div>
+				<h2>Titre 2</h2>
+				<p>paragraphe <span>2.1</span></p>
+				<p>paragraphe <span>2.2</span></p>
+				<p>paragraphe <span>2.3</span></p>
+			</div>
+		</div>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

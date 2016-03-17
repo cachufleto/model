@@ -1,0 +1,101 @@
+<script type="text/javascript"> 
+			var obj = {
+				propriete:'string',
+				propriete:'12',
+				propriete:12,
+				propriete:['string','12',12],
+				methode: function(){ 
+					alert(); 
+					}
+			}
+
+			var maison = {
+				piece1:'Salon',
+				piece2:'Cuisine',
+				autre_pieces: 'Homme Cinema',
+				accesoires:['chambre','WC','begnoire'],
+				methode: function(){ 
+					alert('maison'); 
+					}
+			}
+			
+			var client = {
+				prenom:'Mickael',
+				nom:'Voirin',
+				email: 'crjpwork@gmail',
+				date:'12/02/1959'
+			}
+			
+//			alert(client.date);
+//			maison.methode();
+
+			var voiture = {
+				marque1:'citroen',
+				marque2:'renaud',
+				marque3:'peugeot',
+				marque_americaines:['ford','chevrolet','chrysler','dodge'],
+				marque_resteMonde:[['ford','chevrolet','chrysler','dodge'], ['chevrolet','chrysler','dodge','ford'], ['chrysler','dodge','ford','chevrolet']],
+				
+				get:function(){
+					alert(this.marque1);
+					},
+					
+				set_autre:function(){
+					this.marqueX = {
+						Xpropriete1: 'Lancia'
+					}
+				},
+				
+				get_autre:function(){
+					alert(this.marqueX.Xpropriete1);
+					},
+					
+				set_autre:function(tableau){
+					alert(tableau[1]);
+					tableau[1] = tableau[2];
+					return tableau;
+					},
+					
+				set_obj:function(obj){
+					var somme = obj.prop1 + obj.prop2 + obj.prop3 + obj.prop4 + obj.prop5;
+					obj.prop4 = somme;
+					return obj;
+					},
+					
+			}
+			
+			
+			/*voiture.get();
+			alert(voiture.marque_resteMonde[2][2]);
+			voiture.set_autre();
+			voiture.get_autre();*/
+			// manipulation des tableau dans un appel de fonction
+			alert(
+				// methode <= return tableau transformé
+				voiture.set_autre(
+					// argument => Array
+					voiture.marque_resteMonde[1]
+					// indice du tableau retourné
+					)[1]
+				);
+			// alert(voiture.set_autre(voiture.marque_resteMonde[1])[1]);
+			
+			var object_summ = {
+				prop1 : 1,
+				prop2 : 2,
+				prop3 : 3,
+				prop4 : 4,
+				prop5 : 5
+				}
+			
+			// manipulation des objet dans un appel de fonction
+			alert(
+				// methode <= return tableau transformé
+				voiture.set_obj(
+					// argument => objet
+					object_summ
+					// propiété de l'objet retourné
+					).prop4);
+			// alert(voiture.set_obj(object_summ).prop4);
+
+</script>

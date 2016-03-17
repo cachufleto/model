@@ -1,0 +1,16 @@
+<?php
+
+# monmodule install
+// https://www.drupal.org/node/876250
+
+function monmodule_schema(){
+	
+	db_query("CREATE TABLE IF NOT EXISTS monmodule_annuaire(
+		  id_membre int(5) NOT NULL AUTO_INCREMENT,
+		  nom varchar(20) NOT NULL,
+		  prenom varchar(20) NOT NULL,
+		  telephone varchar(20) NOT NULL,
+		  PRIMARY KEY (id_membre),
+		  UNIQUE KEY telephone (telephone)
+		)ENGINE=InnoDB DEFAULT CHARSET=latin1;");
+}

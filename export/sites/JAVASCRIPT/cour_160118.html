@@ -1,0 +1,94 @@
+<script type="text/javascript">
+var objet={
+	prop1:456,
+	prop2:'chaine',
+	prop3:true,
+	prop4:['v1','v2','...'],
+	methode:function(){
+		alert('coucou');
+	},
+	prop5:'chaine2',
+	methode2:function(){
+		this.prop5='nouvelle chaine';
+		return this.prop5;
+	}
+	
+}
+
+/* alert(objet.prop1);
+objet.methode(); */
+
+// mot clé this --> permet d'appeler l'objet en son sein pour une methode généralement. 
+
+/*alert(objet.prop5);
+objet.methode2();
+alert(objet.prop5+" - par objet");
+alert(objet.methode2()+" - par retour de fonction/methode objet");
+
+window.alert();
+number.isNaN(); */
+
+// Classe : modèle permettant de creer les objets. Elles regroupent les méthodes et propriétés de bases. Les objets qui seront issues d'une classe aquiereront à leur tour les mêmes propriétés et méthodes. 
+
+// Instancier une classe : operation permettant de creer un objet à partir d'une classe. Mot clé new
+
+// Objets constructeurs : Ce sont des classes. On peut instancier une classe en y fournissant des arguments. Ces derniers seront les propriétés des nouveaux objets. 
+
+var voiture=['Renault','Ford','Audi','Peugeot'];
+// tableau array(); -> constructeur. 
+var voiture2 = new Array('Renault','Ford','Audi','Peugeot');
+//alert(voiture2[1]);
+  
+// methodes : 
+// Getters : permettent de recuperer des variables ou des données.
+// Setters : permettent de donner des informations aux objets instanciés (non classe non constructeur). 
+
+var maintenant = new Date(); // creation de l'objet
+// méthodes que nous pouvons utiliser seulement si l'objet est créé. 
+alert(maintenant.getHours()+" - "+maintenant.getMinutes());
+
+// peut prendre comme argument une date au format anglais
+var ancien = new Date("2016/03/03");
+//alert(ancien);
+
+// avec l'heure :
+var ancien_z = new Date("2016/04/30 22:05:03");
+//alert(ancien_z);
+
+// timestamps : 
+var ancien=new Date(11119234566555);
+//alert(ancien);
+
+// par arguments 
+var ancien = new Date(2016, 04, 30, 22, 5, 3);
+
+  
+//Utilisation d'un getter:
+alert(ancien_z.getHours());
+var heure_definis=ancien_z.getHours(); 
+  
+// utilisation d'un setter:
+ancien_z.setHours(15);
+alert(ancien_z.getHours());
+
+// prototype : Ajout de méthodes aux classes/constructeurs par l'exterieure.  
+//date.prototype.getHours(); <=> votreobjet.getHours();
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

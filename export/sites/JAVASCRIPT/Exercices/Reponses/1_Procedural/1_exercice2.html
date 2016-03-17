@@ -1,0 +1,51 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>JavaScript : Exercice 2</title>
+		<meta charset="UTF-8" />
+		<script type="text/javascript">
+			/*1.
+				Réalisez le programme (algorithme) suivant : Au CHARGEMENT du document, j'affiche une B.d.D contenant le message "Voulez vous continuer ?". Si l'utilisateur clique sur OK, j'affiche une B.d.D avec le message "Vous avez  cliqué sur OK !" SINON j'affiche une B.d.D avec le message "Vous avez choisi d'annuler."
+
+
+				Nécessite l'utilisation de l'attribut d'événement onload, de la fonction confirm() / de la fonction alert() / d'un bloc conditionnel if...else
+			*/
+			var maFonction = function(){
+				var truc=confirm("Voulez vous continuer ?");
+				if(truc){alert("Vous avez  cliqué sur OK !");}
+				else {alert("Vous avez choisi d'annuler.");}
+			}
+			/*2.
+				Réalisez le programme (algorithme) suivant : Quand je CLIQUE sur le premier paragraphe, j'affiche une B.d.D contenant le message "Voulez vous continuer ?". Si l'utilisateur clique sur OK, j'affiche une B.d.D avec le message "Vous avez  cliqué sur OK !" SINON j'affiche une B.d.D avec le message "Vous avez choisi d'annuler."
+
+
+				Nécessite l'utilisation de l'attribut d'événement onclick, de la fonction confirm() / de la fonction alert() / d'un bloc conditionnel if...else
+			*/
+			var maFonction2 = function(){
+				var truc=confirm("Voulez vous continuer ?");
+				if(truc){alert("Vous avez  cliqué sur OK !");}
+				else {alert("Vous avez choisi d'annuler.");}
+			}
+			/*3.
+				Réalisez le programme (algorithme) suivant : Quand je SURVOLE le premier titre, j'affiche une B.d.D contenant le message "Voulez vous continuer ?". Si l'utilisateur clique sur OK, j'affiche une B.d.D avec le message "Vous avez  cliqué sur OK !" SINON j'affiche une B.d.D avec le message "Vous avez choisi d'annuler."
+
+				
+				Nécessite l'utilisation de l'attribut d'événement onmouseover, de la fonction confirm() / de la fonction alert() / d'un bloc conditionnel if...else
+			*/
+			var maFonction3 = function(){
+				var truc=confirm("Voulez vous continuer ?");
+				if(truc){alert("Vous avez  cliqué sur OK !");}
+				else {alert("Vous avez choisi d'annuler.");}
+			}
+			
+		</script>
+	</head>
+	<body onload="maFonction();">
+		<h1 onmouseover="maFonction2();" onclick="maFonction3();">Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>JavaScript : Exercice 2</title>
+		<meta charset="UTF-8" />
+		<script type="text/javascript">
+
+			
+			
+			var age = 0;
+			
+			var ageGet = function(i){
+				return prompt(i + " Quel est votre age");
+				
+			}
+			
+			// control d'incémentation dans ma boucle while
+			var i=0;
+			while(age<18 && i<6){	
+				age=ageGet(i);
+				i++;
+			}
+			
+			alert(age + ' ' + i);
+			
+		</script>
+	</head>
+	<body>
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p onmousemove="confirmer();">Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

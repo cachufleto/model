@@ -1,0 +1,50 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>JavaScript : Exercice 1</title>
+		<meta charset="UTF-8" />
+		<script type="text/javascript">
+			/*1. 
+				Quand on clique sur le premier paragraphe, exécuter une fonction que vous avez déclaré dans l'entête du document. Cette fonction doit elle même déclencher une fonction qui affichera une boite de dialogue contenant le texte "Ceci est un choix" et le boutons OK et Annuler.
+
+				Nécessite l'utilisation de la fonction confirm()
+			*/
+			var maFonction = function(){
+				confirm("Ceci est un choix");
+			}
+			/*2.
+				Quand on clique sur le second paragraphe, exécuter une AUTRE fonction que vous avez déclaré dans l'entête du document. Cette fonction doit elle même déclencher une fonction qui affichera une Boite de Dialogue (B.d.D) contenant le texte "Ceci est un choix" et le boutons OK et Annuler. 
+
+				Sauvegardez ce qui est retourné par la fonction qui affiche la B.d.D. Affichez ce que vous avez sauvegardé dans une nouvelle B.d.D.
+			
+				Nécessite l'utilisation de la fonction confirm() puis de la fonction alert()
+			*/
+			var maFonction2 = function(){
+				var aff_confirm=confirm("Ceci est un choix");
+				alert(aff_confirm);
+			}
+			/*
+				Quelle information nous retourne la fonction confirm() si l'utilisateur clique sur le choix OK ? Annuler ?
+			*/
+
+			/* 3.
+				Réalisez le programme (algorithme) suivant : Au CHARGEMENT du document, j'affiche une B.d.D contenant le message "Voulez vous continuer ?". SI l'utilisateur clique sur OK, j'affiche un message "Vous avez cliqué sur OK". SINON rien.
+
+				Nécessite l'utilisation de l'attribut d'événement onload, de la fonction confirm() / de la fonction alert() / d'un bloc conditionnel if...
+			*/
+			var maFonction3 = function(){
+				var aff_confirm=confirm("Voulez vous continuer ?");
+				if(aff_confirm){alert("Vous avez confirmé");}
+			}
+			
+		</script>
+	</head>
+	<body onload="maFonction3();">
+		<h1>Mon nouveau document</h1>
+		<p onclick="maFonction();">Premier paragraphe</p>
+		<p onclick="maFonction2();">Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>JavaScript : Exercice 6</title>
+		<meta charset="UTF-8" />
+		<script type="text/javascript">
+			/*
+				Réalisez le programme (algorithme) suivant : Quand je CLIQUE sur un paragraphe, j'affiche une boite de dialogue (B.d.D) avec un champ de saisie à l'utilisateur. TANT QUE l'utilisateur clique sur Annuler ou clique OK sans rien saisir, j'affiche une B.d.D avec un champ de saisie. 
+
+				PUIS, j'affiche la saisie de l'utilisateur dans une B.d.D.
+
+				Nécessite l'utilisation de l'attribut d'évenement onclick / de la fonction prompt() / de la fonction alert() / d'une boucle while
+			*/
+			var maFonction = function(){
+				var truc=prompt("Saisir : ");
+				while(truc==null || truc==""){
+					truc=prompt("Saisir : ");
+				}
+				alert(truc);
+			}
+		</script>
+	</head>
+	<body onload="maFonction();">
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

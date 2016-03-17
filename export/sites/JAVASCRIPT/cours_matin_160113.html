@@ -1,0 +1,40 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>JavaScript : Exercice 3</title>
+		<meta charset="UTF-8" />
+		<script type="text/javascript">
+			/*
+				Réalisez le programme (algorithme) suivant : Au CHARGEMENT du document, j'affiche une B.d.D contenant le message "Voulez vous continuer ?". TANT QUE l'utilisateur clique sur OK j'affiche une b.d.d avec le message "Voulez vous continuer ?".
+
+				Necessite l'utilisation de l'attribut d'évenement onload, de la fonction confirm() / d'une boucle while
+			*/
+			// while
+			var boucle_confirmer = function (){
+				var valeur=confirm("Voulez vous continuer ?");			
+				while(valeur){
+					valeur=confirm("Voulez vous continuer SVP ?");
+				}
+			}
+			// recurssivité - remplace while en utilsant if..else
+			var boucle_confirmer2 = function(numero){
+				alert('debut'+numero);
+				var valeur=confirm("Voulez vous continuer ?");
+				if(valeur){numero=numero+1;
+				boucle_confirmer2(numero);}
+				else{alert('vous avez cliquer sur annuler');}
+				alert('fin'+numero);
+			}
+			boucle_confirmer2(1);
+			
+		</script>
+	</head>
+	<body>
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

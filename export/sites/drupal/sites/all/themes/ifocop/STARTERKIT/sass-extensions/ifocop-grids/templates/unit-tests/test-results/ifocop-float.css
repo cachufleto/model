@@ -1,0 +1,16 @@
+/**
+ * @file
+ * Test ifocop-float()
+ */
+#test-ifocop-float {
+  /* Test ifocop-float() */
+  float: left;
+  /* Test ifocop-float() with $ifocop-float-direction: right */
+  float: right;
+  /* Test ifocop-float(left) */
+  float: left;
+  /* Test ifocop-float(left, $reverse-all-floats: TRUE) */
+  float: right;
+  /* Test ifocop-float(left) with: $ifocop-reverse-all-floats: TRUE; */
+  float: right;
+}

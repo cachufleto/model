@@ -1,0 +1,54 @@
+/**
+ * @file
+ * Test ifocop-grid-item-base()
+ */
+
+@import "ifocop";
+
+#test-ifocop-grid-item-base {
+  /* Test ifocop-grid-item-base() */
+  @include ifocop-grid-item-base();
+
+  /* Test ifocop-grid-item-base() with $ifocop-box-sizing: content-box */
+  $ifocop-box-sizing: content-box;
+  @include ifocop-grid-item-base();
+  $ifocop-box-sizing: border-box;
+
+  /* Test ifocop-grid-item-base() with $legacy-support-for-ie7: true */
+  $legacy-support-for-ie7: true;
+  @include ifocop-grid-item-base();
+  $legacy-support-for-ie7: false;
+
+  /* Test ifocop-grid-item-base() with $box-sizing-polyfill-path: "/boxsizing.htc" and $legacy-support-for-ie7: true */
+  $box-sizing-polyfill-path: "/boxsizing.htc";
+  $legacy-support-for-ie7: true;
+  @include ifocop-grid-item-base();
+  $box-sizing-polyfill-path: "";
+  $legacy-support-for-ie7: false;
+
+  /* Test ifocop-grid-item-base() with $box-sizing-polyfill-path: "/boxsizing.htc" and $legacy-support-for-ie6: true */
+  $box-sizing-polyfill-path: "/boxsizing.htc";
+  $legacy-support-for-ie6: true;
+  @include ifocop-grid-item-base();
+  $box-sizing-polyfill-path: "";
+  $legacy-support-for-ie6: false;
+
+  /* Test ifocop-grid-item-base() with $ifocop-gutter-width: 15px */
+  $ifocop-gutter-width: 15px;
+  @include ifocop-grid-item-base();
+  $ifocop-gutter-width: 20px;
+
+  /* Test ifocop-grid-item-base() with $ifocop-gutter-width: 15px and $ifocop-float-direction: right */
+  $ifocop-gutter-width: 15px;
+  $ifocop-float-direction: right;
+  @include ifocop-grid-item-base();
+  $ifocop-gutter-width: 20px;
+  $ifocop-float-direction: left;
+
+  /* Test ifocop-grid-item-base() with $ifocop-gutter-width: 15px and $ifocop-reverse-all-floats: true */
+  $ifocop-gutter-width: 15px;
+  $ifocop-reverse-all-floats: true;
+  @include ifocop-grid-item-base();
+  $ifocop-gutter-width: 20px;
+  $ifocop-reverse-all-floats: false;
+}

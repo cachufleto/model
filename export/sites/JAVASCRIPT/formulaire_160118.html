@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html> <!-- document -->
+	<head>
+		<title>Javascript</title>
+		<script type="text/javascript">
+			
+			// afficher la valeur : 
+			//alert(window.document.getElementById('id_texte').value);
+			
+			// affecter une valeur :
+			var changer_input=function(){
+				window.document.getElementById('id_texte').value='remplir le champ';
+				
+				//spécificité title : 
+				// alert(window.document.title);
+				window.document.title='5678';
+				
+				alert(window.document.getElementById('id_h1').innerHTML);
+				
+				window.document.getElementById('id_texte').title="texte";
+				
+			}
+			
+			/* window.document.getElementById('id_form');*/
+			
+		</script>
+	</head>
+	<body onload="changer_input();">
+		<h1 id="id_h1">Formulaire</h1>
+		<script type="text/javascript">window.document.write("<p>Paragraphe1</p>");</script>
+		<form id="id_form" name="formulaire" method="post" action="#">
+			<label for="id_texte">Nom : </label>
+			<input type="text" name="texte" id="id_texte" title="champ" value="qsdqsddqs">
+			<input type="submit" value="envoyer">
+		</form>
+		
+	</body>
+</html>

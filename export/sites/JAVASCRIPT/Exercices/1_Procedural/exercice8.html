@@ -1,0 +1,96 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>JavaScript : Exercice 8</title>
+		<meta charset="UTF-8" />
+		<script type="text/javascript">
+			/*
+				La fonction parseFloat(?) est une fonction qui prend entrée une information. SI cette information est un nombre, elle retourne le nombre correspondant. SINON elle retourne un code d'erreur : NaN. (Not A Number). Cette fonction est fréquemment utilisée pour transformer des valeurs exprimées en px, em, %, ... en nombres manipulables.
+				
+				parseFloat(?) -> retourne le nombre || Not A Number
+			*/
+
+			/*1.
+				Réalisez le programme (algorithme) suivant : Au CHARGEMENT du document,  j'affiche une boite de dialogue (B.d.D) avec un champ de saisie à l'utilisateur. PUIS, utilisez la fonction parseFloat pour transformer la saisie utilisateur obtenue. Afficher le résultat de la transformation dans une B.d.D.
+
+				Nécessite l'utilisation de l'attribut d'événement onload / de la fonction prompt() / de la fonction alert() / de la fonction parseFloat
+				
+				Body onload action() -> var1 = prompt() // <- [null]
+				var2 = parseFloat(var1); 
+				alert(var2);
+				
+			*/
+			
+			// fonction saisie
+			var  saisie = function(arg){
+				var info = '';
+				while(!(info = prompt('Merci de saisier la ' + arg + ' information'))) {}
+				return info;
+			}
+			
+			/*
+				La fonction isNaN(?) est une fonction qui prend entrée une variable. SI cette variable n'est pas un nombre, la fonction retourne true, SINON elle retourne false.
+			*/
+
+			/*2.
+				Améliorez le programme (algorithme) précédent : Au CHARGEMENT du document, j'affiche une boite de dialogue (B.d.D) avec un champ de saisie à l'utilisateur. PUIS, utilisez la fonction parseFloat pour transformer la saisie utilisateur obtenue. PUIS, utilisez la fonction isNaN avec le résultat de cette transformation pour obtenir une valeur de vérification. Affichez le résultat de cette valeur de vérification dans une B.d.D.
+
+				Nécessite l'utilisation de l'attribut d'événement onload / de la fonction prompt() / de la fonction alert() / de la fonction parseFloat() / de la fonction isNaN()
+			*/
+
+			// fonction action
+			var action = function(){
+				var info_1 = saisie('premiere');
+				var info_2 = parseFloat(info_1);
+				
+				// verifie des valeurs numerique ou pas sans les transformer
+				if(!isNaN(info_1)){
+				
+					// pratique parseFloat();
+					var info_2 = parseFloat(info_1); // renvois toujour un type number !!!! attention avec la veleur 0 
+					
+					if(info_2 || info_2 == 0) // si parseFloat n'est pas NaN
+						alert('Vous avez saisie un chiffre : "' + info_2 + '"');
+					else alert('Il y a une ERREUR Rarissime!!!!!! ');
+				}
+				else
+					alert('Vous avez saisie du texte : "' + info_1 + '"');
+				
+				// aplication de isNaN
+				if(!isNaN(info_1)) // si parseFloat n'est pas NaN
+					alert('Je confirme, c\'est un chiffre : "' + info_1 + '"');
+				else
+					alert('Je confirme, c\'est du texte : "' + info_1 + '" et serait transformer en "' + info_2 + '" avec parseFloat()');
+				
+			}
+			
+			/*3.
+				Réalisez le programme (algorithme) suivant : Quand je CLIQUE sur le premier paragraphe, je demande à l'utilisateur de saisir un nombre. SI l'utilisateur n'a pas saisi un nombre, j'affiche le message "Vous devez saisir un nombre.". SINON, j'affiche le message "Merci d'avoir saisi un nombre."
+
+				Nécessite l'utilisation de l'attribut d'événement onclick / de la fonction prompt() / de la fonction alert() / de la fonction parseFloat() / de la fonction isNaN() / d'un bloc conditionnel if... else...
+			*/
+			
+						// fonction saisie
+			var  saisieNombre = function(){
+
+				var NaNombre = true;
+				while(NaNombre) {
+					info = prompt('Merci de saisier un NOMBRE information');
+					// Attention avec les informartion en vide
+					NaNombre = (info == '' || isNaN(info))? true: false;
+				}
+				alert('Vous avez saisie : ' +  info);
+			}
+			
+
+		</script>
+	</head>
+	<body onload="action();">
+		<h1>Exercice 8 'onload'</h1>
+		<p onclick="saisieNombre();">Premier paragraphe clickable</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

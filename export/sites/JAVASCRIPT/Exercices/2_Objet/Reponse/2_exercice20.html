@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>JavaScript : Exercice 20</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript"> 
+			//Enoncé :
+			/*
+				Dans les exercices précédents vous avez créé plusieurs fonctions (une douzaine environ) qui se déclenchent quand l’utilisateur clique sur un paragraphe.
+
+				Vous allez devoir créer une classe pour regrouper toutes ces fonctions (au moins 5 d’entre-elles) au sein d’un objet. 
+
+				1.	Ecrivez une classe dans laquelle chaque propriété contiendra une fonction créée précédemment. (Une fonction à l’intérieur d’une propriété d’un objet s’appelle une méthode).
+
+				2.	Utilisez cette classe pour créer un nouvel objet en mémoire (mot-clef : new) dans une variable.
+
+				3.	Créez plusieurs éléments HTML. Pour chaque élément HTML distinct, lorsqu'on clique sur l'élément, déclenchez une méthode distincte de cet objet.
+			*/
+			var mesExercices = function(){
+				this.exo1 = function(){
+					var choix = confirm('Faîtes un choix !');
+					//alert(choix);
+					if(choix){
+						alert('Vous avez  cliqué sur OK !');
+					}else{
+						alert('Vous avez choisi d\'annuler.');
+					};
+				};
+				this.exo4 = function(){
+					var saisie = prompt('Champ de Saisie :');
+					alert(saisie);
+				};
+				this.exo6 = function(){
+					var saisie = prompt('Champ de Saisie :');
+					while(saisie == '' || saisie == null){
+						var nouvelleSaisie = prompt('Nouveau Champ de Saisie :');
+						saisie = nouvelleSaisie;
+					};
+				};
+				this.exo8 = function(){
+					var saisie = prompt('Saisissez un nombre :');
+					var saisieEnNombre = parseFloat(saisie);
+					var nEstPasUnNombre = isNaN(saisieEnNombre);
+					if(nEstPasUnNombre){
+						alert('Vous devez saisir un nombre');
+					}else{
+						alert('Merci d\'avoir saisi un nombre');
+					};
+				};
+				this.exo10 = function(){
+					var saisie1 = prompt('Saisissez un nombre :');
+					var saisieEnNombre1 = parseFloat(saisie1);
+					var nEstPasUnNombre1 = isNaN(saisieEnNombre1);
+					while(nEstPasUnNombre1){
+						saisie1 = prompt('Saisissez un nombre :');
+						saisieEnNombre1 = parseFloat(saisie1);
+						nEstPasUnNombre1 = isNaN(saisieEnNombre1);
+					};
+					//Ici je suis sûr que saisieEnNombre1 contient un nombre
+					var saisie2 = prompt('Saisissez un autre nombre :');
+					var saisieEnNombre2 = parseFloat(saisie2);
+					var nEstPasUnNombre2 = isNaN(saisieEnNombre2);
+					while(nEstPasUnNombre2){
+						saisie2 = prompt('Saisissez un autre nombre :');
+						saisieEnNombre2 = parseFloat(saisie2);
+						nEstPasUnNombre2 = isNaN(saisieEnNombre2);
+					};
+					//Ici je suis sûr que saisieEnNombre2 contient un nombre
+					//Ici je suis sûr que saisieEnNombre1 ET saisieEnNombre2 contiennent tous les deux des nombres.
+					var somme = saisieEnNombre1 + saisieEnNombre2;
+					alert(somme);
+				};
+			};
+
+			var monNouvelObjet = new mesExercices();
+		</script>
+	</head>
+	<body>
+		<h1>Titre</h1>
+		<div>
+			<p onclick="monNouvelObjet.exo1();">Exercice 1</p>
+			<p onclick="monNouvelObjet.exo4();">Exercice 4</p>
+			<p onclick="monNouvelObjet.exo6();">Exercice 6</p>
+			<p onclick="monNouvelObjet.exo8();">Exercice 8</p>
+			<p onclick="monNouvelObjet.exo10();">Exercice 10</p>
+		</div>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

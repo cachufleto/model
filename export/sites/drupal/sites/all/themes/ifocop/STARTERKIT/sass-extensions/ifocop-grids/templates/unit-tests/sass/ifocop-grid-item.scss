@@ -1,0 +1,73 @@
+/**
+ * @file
+ * Test ifocop-grid-item()
+ */
+
+@import "ifocop";
+
+#test-ifocop-grid-item {
+  /* Test ifocop-grid-item(6, 4) with 12 column grid and 20px gutter */
+  $ifocop-column-count: 12;
+  @include ifocop-grid-item(6, 4);
+  $ifocop-column-count: 1;
+
+  /* Test ifocop-grid-item(3, 3) with box-sizing: content-box, 5 column grid and 10% gutter */
+  $ifocop-column-count: 5;
+  $ifocop-gutter-width: 10%;
+  $ifocop-box-sizing: content-box;
+  @include ifocop-grid-item(3, 3);
+  $ifocop-column-count: 1;
+  $ifocop-gutter-width: 20px;
+  $ifocop-box-sizing: border-box;
+
+  /* Turn off $ifocop-auto-include-item-base */
+  $ifocop-auto-include-item-base: false;
+
+  /* Test ifocop-grid-item(3, 3) with 5 column grid and 40px gutter */
+  $ifocop-column-count: 5;
+  $ifocop-gutter-width: 40px;
+  @include ifocop-grid-item(3, 3);
+  $ifocop-column-count: 1;
+  $ifocop-gutter-width: 20px;
+
+  /* Test ifocop-grid-item(3, 3, right) with 5 column grid and 40px gutter */
+  $ifocop-column-count: 5;
+  $ifocop-gutter-width: 40px;
+  @include ifocop-grid-item(3, 3, right);
+  $ifocop-column-count: 1;
+  $ifocop-gutter-width: 20px;
+
+  /* Test ifocop-grid-item(3, 3) with 5 column grid and 40px gutter and $ifocop-reverse-all-floats */
+  $ifocop-column-count: 5;
+  $ifocop-gutter-width: 40px;
+  $ifocop-reverse-all-floats: true;
+  @include ifocop-grid-item(3, 3);
+  $ifocop-column-count: 1;
+  $ifocop-gutter-width: 20px;
+  $ifocop-reverse-all-floats: false;
+
+  /* Test ifocop-grid-item(3, 3, right) with 5 column grid and 40px gutter and $ifocop-reverse-all-floats */
+  $ifocop-column-count: 5;
+  $ifocop-gutter-width: 40px;
+  $ifocop-reverse-all-floats: true;
+  @include ifocop-grid-item(3, 3, right);
+  $ifocop-column-count: 1;
+  $ifocop-gutter-width: 20px;
+  $ifocop-reverse-all-floats: false;
+
+  /* Test ifocop-grid-item(3, 2.5) with 5 column grid and 40px gutter */
+  $ifocop-column-count: 5;
+  $ifocop-gutter-width: 40px;
+  @include ifocop-grid-item(3, 2.5);
+  $ifocop-column-count: 1;
+  $ifocop-gutter-width: 20px;
+
+  /* Test ifocop-grid-item(3, 3) with $ifocop-grid-width: 1000px, 5 column grid and 40px gutter */
+  $ifocop-grid-width: 1000px;
+  $ifocop-column-count: 5;
+  $ifocop-gutter-width: 40px;
+  @include ifocop-grid-item(3, 3);
+  $ifocop-grid-width: 100%;
+  $ifocop-column-count: 1;
+  $ifocop-gutter-width: 20px;
+}

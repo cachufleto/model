@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+	<title> Voici un flux rss </title>
+	<link>http://localhost</link>
+	<description>Flux rss du site</description>
+	<pubDate>2016-01-08 09:01:58</pubDate>
+	<item>
+		<title>TEST</title>
+		<link>http://localhost/domoquick/PHP/php_partie_3/maboutique/fiche_article.php?id_article=20</link>
+		<description>YGHKDVFckSDV SDv</description>
+		<pubDate>2016-01-08 09:01:58</pubDate>
+	</item>
+	<item>
+		<title>Tshirt rouge</title>
+		<link>http://localhost/domoquick/PHP/php_partie_3/maboutique/fiche_article.php?id_article=5</link>
+		<description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam purus leo, sodales a urna at, malesuada consectetur tellus. Ut eget purus vel diam varius sollicitudin. </description>
+		<pubDate>2016-01-08 09:01:58</pubDate>
+	</item>
+	<item>
+		<title>Tshirt blanc</title>
+		<link>http://localhost/domoquick/PHP/php_partie_3/maboutique/fiche_article.php?id_article=4</link>
+		<description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam purus leo, sodales a urna at, malesuada consectetur tellus. Ut eget purus vel diam varius sollicitudin. </description>
+		<pubDate>2016-01-08 09:01:58</pubDate>
+	</item>
+	<item>
+		<title>Polo noir</title>
+		<link>http://localhost/domoquick/PHP/php_partie_3/maboutique/fiche_article.php?id_article=7</link>
+		<description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam purus leo, sodales a urna at, malesuada consectetur tellus. Ut eget purus vel diam varius sollicitudin. </description>
+		<pubDate>2016-01-08 09:01:58</pubDate>
+	</item>
+	<item>
+		<title>Polo blanc</title>
+		<link>http://localhost/domoquick/PHP/php_partie_3/maboutique/fiche_article.php?id_article=8</link>
+		<description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam purus leo, sodales a urna at, malesuada consectetur tellus. Ut eget purus vel diam varius sollicitudin. </description>
+		<pubDate>2016-01-08 09:01:58</pubDate>
+	</item>
+</channel>
+</rss>

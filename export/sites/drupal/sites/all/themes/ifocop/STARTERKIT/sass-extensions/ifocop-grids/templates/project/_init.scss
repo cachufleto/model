@@ -1,0 +1,21 @@
+//
+// @file
+// This file sets up all our variables and load all the modules we need for all
+// generated CSS in this project. To use it, simply: @import "init";
+//
+
+// Legacy browser variables for Compass.
+$legacy-support-for-ie6     : false;
+$legacy-support-for-ie7     : false;
+
+// Set up ifocop Grids.
+$ifocop-column-count           : 1;
+$ifocop-gutter-width           : 20px;
+$ifocop-auto-include-item-base : false;
+
+//
+// Import our modules.
+//
+@import "ifocop";
+@import "ifocop/background";
+@import "visually-hidden";

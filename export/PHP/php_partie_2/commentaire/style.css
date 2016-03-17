@@ -1,0 +1,54 @@
+body{ 
+	font-family: calibri;
+}
+h1 {
+	color: white;
+	background-color: steelblue;
+	padding: 10px;
+}
+h2{ 
+	color: steelblue; 
+}
+.message{
+float: center;
+background: #d9e8fd;
+width: 500px;
+padding: 15px;
+margin: 10px auto;
+border: 2px solid #6eaafb;
+}
+.titre{
+text-align: center;
+width: 350px;
+}
+.contenu{
+width: 350px;
+font-style: italic;
+}
+
+label,select{
+float: left;
+width: 100px;
+}
+label {
+	color: steelblue;
+	font-style: italic;
+}
+fieldset{
+float: left;
+width: 500px;
+}
+.mon_bouton {
+	background-color: steelblue;
+	padding: 5px 15px;
+	border-radius: 5px;
+	color: white;
+	border-color: MediumSlateBlue;
+}
+.mon_bouton:hover {
+	background-color: white;
+	color: steelblue;
+}
+.clear{
+	clear: both;
+}

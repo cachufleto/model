@@ -1,0 +1,69 @@
+/**
+ * @file
+ * Test ifocop-grid-background()
+ */
+
+@import "ifocop/background";
+
+#test-ifocop-grid-background {
+  /* Test ifocop-grid-background() with 1 column grid and 20px gutter */
+  $ifocop-grid-numbers: top;
+  @include ifocop-grid-background();
+  $ifocop-grid-numbers: both;
+
+  // Turn off numbers for all other tests.
+  $ifocop-grid-numbers: none;
+
+  /* Test ifocop-grid-background() with 12 column grid and 20px gutter */
+  $ifocop-column-count: 12;
+  @include ifocop-grid-background();
+  $ifocop-column-count: 1;
+
+  /* Test ifocop-grid-background(), 5 column grid, 10% gutter and black grid color */
+  $ifocop-column-count: 5;
+  $ifocop-gutter-width: 10%;
+  $ifocop-grid-color: #000;
+  @include ifocop-grid-background();
+  $ifocop-column-count: 1;
+  $ifocop-gutter-width: 20px;
+  $ifocop-grid-color: rgba(#ffdede, 0.8);
+
+  /* Test ifocop-grid-background() with 5 column grid and 40px gutter */
+  $ifocop-column-count: 5;
+  $ifocop-gutter-width: 40px;
+  @include ifocop-grid-background();
+  $ifocop-column-count: 1;
+  $ifocop-gutter-width: 20px;
+
+  /* Test ifocop-grid-background(), 5 column grid and 10% gutter and $ifocop-reverse-all-floats */
+  $ifocop-column-count: 5;
+  $ifocop-gutter-width: 10%;
+  $ifocop-reverse-all-floats: true;
+  @include ifocop-grid-background();
+  $ifocop-column-count: 1;
+  $ifocop-gutter-width: 20px;
+  $ifocop-reverse-all-floats: false;
+
+  /* Test ifocop-grid-background() with 5 column grid and 40px gutter and $ifocop-reverse-all-floats */
+  $ifocop-column-count: 5;
+  $ifocop-gutter-width: 40px;
+  $ifocop-reverse-all-floats: true;
+  @include ifocop-grid-background();
+  $ifocop-column-count: 1;
+  $ifocop-gutter-width: 20px;
+  $ifocop-reverse-all-floats: false;
+
+  /* Test ifocop-grid-background() with $ifocop-grid-width: 1000px, 5 column grid and 40px gutter */
+  $ifocop-grid-width: 1000px;
+  $ifocop-column-count: 5;
+  $ifocop-gutter-width: 40px;
+  @include ifocop-grid-background();
+  $ifocop-grid-width: 100%;
+  $ifocop-column-count: 1;
+  $ifocop-gutter-width: 20px;
+
+  /* Test ifocop-grid-background() with all 24 grid numbers */
+  $ifocop-column-count: 24;
+  @include ifocop-grid-background();
+  $ifocop-column-count: 1;
+}

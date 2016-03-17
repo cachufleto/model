@@ -1,0 +1,16 @@
+contenu{
+	display: block;
+	font-size: 16px;
+	margin-left: 200px;
+}
+titre{
+	font-size: 20px;
+}
+ville{
+	display: block;
+	width: 200px;
+	background-color: yellow;
+}
+specificite{
+	display:none;
+}

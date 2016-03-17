@@ -1,0 +1,36 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>JavaScript : Exercice 10</title>
+		<meta charset="UTF-8" />
+		<script type="text/javascript">
+			/*
+				Réalisez le programme (algorithme) suivant : Quand je CLIQUE sur le deuxième paragraphe, j'oblige l'utilisateur à saisir un nombre. PUIS, je l'OBLIGE à saisir un second nombre. PUIS, j'affiche une B.d.D avec le résultat du calcul de la somme des deux nombres.
+
+				Nécessite l'utilisation de l'attribut d'événement onclick / de la fonction prompt() / de la fonction alert() / de la fonction parseFloat() / de la fonction isNaN() / de boucles while...
+			*/
+			var maFonction = function(){
+					var truc=prompt("Saisir un 1er nombre : ");
+					while(truc=="" || truc==null || isNaN(parseFloat(truc))){
+						truc=prompt("vous devez saisir un 1er nombre");	
+					}
+					alert("Merci!!! 1er ok");
+					var truc2=prompt("Saisir un 2nd nombre : ");
+					while(truc2=="" || truc2==null || isNaN(parseFloat(truc2))){
+						truc2=prompt("vous devez saisir un 2nd nombre");	
+					}
+					alert("Merci!!! 2nd ok");
+					alert("La somme des 2 nombres est : "+(parseFloat(truc)+parseFloat(truc2)));
+			}
+			
+		</script>
+	</head>
+	<body>
+		<h1>Mon nouveau document</h1>
+		<p onclick="maFonction();">Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

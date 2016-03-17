@@ -1,0 +1,202 @@
+<!DOCTYPE html >
+<html lang="fr" >
+	<head>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+
+		<h1 onclick="alert('ce qu\'il fait beau');">Variables : </h1>
+		<script type="text/javascript">
+			var truc='chaine'; var tec;
+			var le_truc;
+			// alert(typeof(tec));
+
+			// nombre
+			var nombre=5;
+			// alert(typeof(nombre));
+
+			var nombre2='5';
+			var chaine_de_caracteres="ce qu\"il fait beau";
+			// alert(chaine_de_caracteres);
+
+			// +-*/
+			var monnombre1=5;
+			var monnombre2=10;
+			var result_plus=monnombre1+monnombre2;
+			// alert(result_plus);
+			var result_moins=9-3;
+			// alert(result_moins);
+
+			var result_parenthese=(6+3)*monnombre2 + (monnombre1-56);
+			//alert(result_parenthese);
+
+			// modulo %
+			//13/5
+			//13 = (5*2)+3
+			//alert(13%5);
+			//7/2
+			//7 = (3*2)+1
+			//alert(7%2);
+
+			// tableaux / type array
+
+			var tableau=['valeur0',5,'valeur2'];
+			//alert(tableau[1]);
+			//alert(typeof(tableau));
+			//alert(typeof(['valeur0',5,'valeur2']));
+
+			var tableau2=['Pierre','Paul','Jacques',['Jeanne','Marie'],'Mickael'];
+
+			/* alert(tableau2[2]);
+			alert(tableau2[3][1]); */
+
+			// concatenation +
+
+			// alert(tableau2[0]+' se trouve avec '+ tableau2[3][1]);
+
+			var nombre=5;
+			var chaine="mon résulat est ";
+			// alert(typeof(nombre));
+			// alert(typeof(chaine));
+			var concac=chaine+nombre;
+			// alert(concac);
+			// alert(typeof(concac));
+
+			var concac2=nombre+"une chaine 5";
+			//alert(typeof(concac2));
+
+
+			// fonctions prédéfinies
+			//alert('');
+			//typeof('');
+
+			// fonction
+
+			/* var maFonction = function(argument){
+				instructions1;
+				instructions2;
+				instructions3;
+				return valeur_sortie;
+			}
+
+			maFonction(argument); */
+
+			var affiche_message = function(message, message2){
+				alert(message+"\n"+message2);
+			}
+
+			var mess="ce message est affiché";
+			var mess2="Merci";
+			// affiche_message(mess, mess2);
+
+			/*var operation = function(chiffre1,chiffre2,chiffre3,chiffre4){
+				var variable=chiffre1+chiffre2-chiffre3/chiffre4;
+				alert("Dans la fonction : "+variable);
+			}
+
+			alert("Avec appel de la fonction "+operation(5,3,62,45)+5);*/
+
+			var operation2 = function(chiffre1,chiffre2){
+				var variablenombre=chiffre1+chiffre2;
+				return variablenombre;
+			}
+
+			//var resultat = operation2(3,5);
+			//var resultat2=resultat+5;
+			//alert(resultat+" "+resultat2);
+
+			// fonction prédéfinies
+			//alert(); type();
+
+
+			//confirm();
+			//var valeur_retour=confirm("message");
+			// return par defaut true ou false
+			//alert(valeur_retour);
+
+			//prompt();
+			//var valeur_retour=prompt("message");
+			//alert(valeur_retour);
+
+			// booleens :
+			// 2 états : true (1) ou false (0)
+
+			// opérateurs de comparaisons
+			/*
+			== variables egales entres elles
+			!= variables différentes entre elles
+			V1 > V2  Variable1 est strictement supérieure 		  à la variable 2
+			V1 >= V2 Variable1 supérieure ou égale à la 		variable 2
+			V1 < V2	 Variable1 est strictement inférieure 		  à la variable 2
+			V1 <= V2 Variable1 inférieure ou égale à la 		variable 2
+			*/
+			// alert(5==7);
+			// alert(5<=7);
+			// alert('didier'!='Jérome');
+
+			// opérateurs logiques
+
+			/*
+			! négation
+			&& ET -> renvoie true si tout les élément sont true
+			|| OU -> renvoie true si l'un des éléments des éléments est true.
+			Si tout les éléments sont true, renvoie true.
+			si tout les éléments sont false, renvoie false.
+
+			*/
+			//alert(!(5==7));
+			//alert((5==7) && (5<=7)); //--> false
+			//alert((5==5) && (5<=7)); //--> true
+
+			//alert((5==7) || (5<=7));
+			//alert(!true || 'Didier'=='Jérome' || 6>9);
+
+ //alert(!(!true || 'Didier'=='Jérome') && 6<9 && (5==5 && 8<9));
+
+			// Comparateurs de types : Permet de vérifier la valeurs des éléments mais aussi leurs types.
+			/*
+			=== le contenu et le type sont égaux entre deux deux variables.
+			!== le contenu ou le type sont différents entre les 2 variables. */
+
+			// alert("5"===5);
+
+			// isNaN('valeur');
+			// renverra true si ce n'est pas un nombre
+			// renverra false si c'est un nombre.
+
+			//alert(isNaN('cinq')); // --> true
+			//alert(isNaN(5)); // --> false
+
+			// Conditions :
+			// if... else...
+			/*
+			if(condition){ // si condition est vrai
+				instructions;
+			} else { sinon si faux
+				instructions;
+			}*/
+			/*
+			var age=prompt("Quel est votre age ?");
+			if(age<18){
+				alert("Vous etes mineur");
+			} else {
+				alert("Vous etes majeur");
+			}*/
+
+
+		//	if((!true || 'Didier'=='Jérome') && 6<9 && (5==5 && 8<9)){alert("vrai");}
+		//	else {alert("faux");}
+
+			while (true) {
+
+			}
+
+
+
+
+
+
+		</script>
+
+	</body>
+</html>

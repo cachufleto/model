@@ -1,0 +1,24 @@
+/**
+ * @file
+ * Test ifocop-half-gutter()
+ */
+#test-ifocop-half-gutter {
+  /* Test ifocop-half-gutter() with default $ifocop-gutter-width: 20px */
+  padding-left: 10px;
+  /* Test ifocop-half-gutter() with $ifocop-gutter-width: 30px */
+  padding-left: 15px;
+  /* Test ifocop-half-gutter(10em) */
+  padding-left: 5em;
+  /* Test ifocop-half-gutter(11em) */
+  padding-left: 5.5em;
+  /* Test ifocop-half-gutter(10px) */
+  padding-left: 5px;
+  /* Test ifocop-half-gutter(11px) */
+  padding-left: 5px;
+  /* Test ifocop-half-gutter(11px, right) */
+  padding-left: 6px;
+  /* Test ifocop-half-gutter(11px) with $ifocop-float-direction: right */
+  padding-left: 5px;
+  /* Test ifocop-half-gutter(11px, left) with $ifocop-float-direction: right */
+  padding-left: 6px;
+}

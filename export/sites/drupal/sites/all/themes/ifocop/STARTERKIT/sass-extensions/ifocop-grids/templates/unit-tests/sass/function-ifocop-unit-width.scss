@@ -1,0 +1,32 @@
+/**
+ * @file
+ * Test ifocop-unit-width()
+ */
+
+@import "ifocop";
+
+#test-ifocop-unit-width {
+  /* Test ifocop-unit-width() with default $ifocop-column-count: 1 */
+  width: ifocop-unit-width();
+
+  /* Test ifocop-unit-width() with $ifocop-column-count: 5 */
+  $ifocop-column-count: 5;
+  width: ifocop-unit-width();
+  $ifocop-column-count: 1;
+
+  /* Test ifocop-unit-width(5) */
+  width: ifocop-unit-width(5);
+
+  /* Test ifocop-unit-width() with $ifocop-grid-width: 100px */
+  $ifocop-grid-width: 100px;
+  width: ifocop-unit-width();
+  $ifocop-grid-width: 100%;
+
+  /* Test ifocop-unit-width(5) with $ifocop-grid-width: 100px */
+  $ifocop-grid-width: 100px;
+  width: ifocop-unit-width(5);
+  $ifocop-grid-width: 100%;
+
+  /* Test ifocop-unit-width(5, 100px) */
+  width: ifocop-unit-width(5, 100px);
+}

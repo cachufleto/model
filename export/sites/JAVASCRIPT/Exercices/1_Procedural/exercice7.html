@@ -1,0 +1,50 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>JavaScript : Exercice 7</title>
+		<meta charset="UTF-8" />
+		<script type="text/javascript">
+			/*
+				Réalisez le programme (algorithme) suivant : Quand je CLIQUE sur un paragraphe, j'affiche une boite de dialogue (B.d.D) avec un champ de saisie à l'utilisateur. TANT que l'utilisateur clique sur Annuler ou clique OK sans rien saisir, j'affiche une B.d.D avec un champ de saisie. 
+				
+				onclick() :: <p> -> var1 = prompt() // <- [null]
+				
+				PUIS, j'affiche encore une boite de dialogue (B.d.D) avec un champ de saisie à l'utilisateur.
+				TANT que l'utilisateur clique sur Annuler ou clique OK sans rien saisir, j'affiche une B.d.D avec un champ de saisie. 
+
+				onclick() :: <p> -> var2 = prompt() // <- [null]
+
+				L'utilisateur a donc saisi deux informations. Je concatène avec (avec +) ces deux informations. J'affiche le résultat de la concaténation dans un B.d.D.
+				
+				alert( var1 + var2)
+
+				Quel résultat s'affiche si l'utilisateur saisit 2 chiffres ? A votre avis pourquoi ?
+
+				Nécessite l'utilisation de l'attribut d'événement onclick / de la fonction prompt() / de la fonction alert() / de boucles while
+			*/
+			// fonction saisie
+			var  saisie = function(arg){
+				var info = '';
+				while(!(info = prompt('Merci de saisier la ' + arg + ' information'))) {}
+				return info;
+			}
+			
+			// fonction action
+			var action = function(){
+				var info_1 = saisie('premiere');
+				var info_2 = saisie('deuxiemme');
+				// prompt() renvoi une chaine de character
+				alert('Vous avez saisie : "' + info_1 + '" et "' + info_2 + '"');
+			}
+			
+		</script>
+	</head>
+	<body>
+		<h1>Exercice 7</h1>
+		<p onclick="action();">Premier paragraphe clickable</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

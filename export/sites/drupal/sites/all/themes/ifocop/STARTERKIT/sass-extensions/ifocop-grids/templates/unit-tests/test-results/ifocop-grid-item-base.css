@@ -1,0 +1,73 @@
+/**
+ * @file
+ * Test ifocop-grid-item-base()
+ */
+#test-ifocop-grid-item-base {
+  /* Test ifocop-grid-item-base() */
+  padding-left: 10px;
+  padding-right: 10px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  /* Test ifocop-grid-item-base() with $ifocop-box-sizing: content-box */
+  padding-left: 10px;
+  padding-right: 10px;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  word-wrap: break-word;
+  /* Test ifocop-grid-item-base() with $legacy-support-for-ie7: true */
+  padding-left: 10px;
+  padding-right: 10px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  /* Test ifocop-grid-item-base() with $box-sizing-polyfill-path: "/boxsizing.htc" and $legacy-support-for-ie7: true */
+  padding-left: 10px;
+  padding-right: 10px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  *behavior: url("/boxsizing.htc");
+  /* Test ifocop-grid-item-base() with $box-sizing-polyfill-path: "/boxsizing.htc" and $legacy-support-for-ie6: true */
+  padding-left: 10px;
+  padding-right: 10px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  *behavior: url("/boxsizing.htc");
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible;
+  /* Test ifocop-grid-item-base() with $ifocop-gutter-width: 15px */
+  padding-left: 7px;
+  padding-right: 8px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  /* Test ifocop-grid-item-base() with $ifocop-gutter-width: 15px and $ifocop-float-direction: right */
+  padding-left: 8px;
+  padding-right: 7px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  /* Test ifocop-grid-item-base() with $ifocop-gutter-width: 15px and $ifocop-reverse-all-floats: true */
+  padding-left: 8px;
+  padding-right: 7px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}

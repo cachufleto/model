@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="ifocop.css" type="text/css" ?>
+<ifocop> 
+   <personne>
+		<nom><![CDATA[ < ]]> Sabord</nom>
+		<prenom>Emile</prenom>
+		<age>63</age>
+   </personne>
+   <personne>
+		<nom><![CDATA[ < Bouzouk ]]></nom>
+		<prenom>Bachir</prenom>
+		<age>82</age>
+   </personne>
+   <personne>
+		<nom>Kohd</nom>
+		<prenom>Jean</prenom>
+		<age>45</age>
+   </personne>
+   <personne>
+		<nom>Diosoleil</nom>
+		<prenom>Liliane</prenom>
+		<age>25</age>
+   </personne>
+</ifocop>

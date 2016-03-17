@@ -1,0 +1,26 @@
+a {
+   text-decoration: none;
+}
+
+#main-menu{
+    width:100%;
+}
+
+#main-menu a{
+   color:red;
+}
+
+#main-menu,
+#main-menu li {
+    display:inline-block;
+    text-align: center;
+    min-height:30px;
+    line-height:30px;
+    background-color:#EEEEEE;
+}
+
+#main-menu li:hover,
+#main-menu li:hover a{
+    background-color:black;
+    color:white;
+}

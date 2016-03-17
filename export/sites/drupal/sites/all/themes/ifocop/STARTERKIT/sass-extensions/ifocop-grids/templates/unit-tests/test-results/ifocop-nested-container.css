@@ -1,0 +1,21 @@
+/**
+ * @file
+ * Test ifocop-nested-container()
+ */
+#test-ifocop-nested-container {
+  /* Test ifocop-nested-container() */
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#test-ifocop-nested-container-2 {
+  /* Test ifocop-nested-container() with $legacy-support-for-ie7: true */
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#test-ifocop-nested-container-3 {
+  /* Test ifocop-nested-container() with $legacy-support-for-ie6: true */
+  padding-left: 0;
+  padding-right: 0;
+}

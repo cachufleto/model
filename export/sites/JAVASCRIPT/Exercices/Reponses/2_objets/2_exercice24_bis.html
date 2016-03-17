@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>JavaScript : Exercice 24</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript"> 
+			//Enoncé :
+			/*
+				En JavaScript la plupart des fonctions de base du langage sont en réalité des méthodes disponibles dans des objets. On dispose par exemple, de base, d'une classe Date. Cette classe détaille un ensemble de méthode pour gérer le temps. Cette classe n'a pas besoin d'information pour la construction.
+			*/
+
+			/*
+				1. Créez un nouvel objet de type Date dans la mémoire.
+			*/
+
+			/*
+				2. Ci-après consultez la liste des méthode de l'objet construit avec Date à cette adresse http://www.commentcamarche.net/contents/571-javascript-l-objet-date (en bas de page).
+			*/
+
+			/*
+				3. Utilisez l'objet créé pour que Quand je clique sur mon titre H1, j'affiche dans une boite de dialogue le nombre d'heures, de minutes et de secondes avant la fin du cours à (17:00:00)
+			*/
+			 
+			var temps_restant_sol_1=function(heure,minutes,secondes){
+				// calcul en secondes des arguement donnés 
+				var s_final=secondes;
+				var m_final=minutes*60;
+				var h_final=heure*3600;
+				var t_final=s_final+m_final+h_final;
+				
+				// instance de la date actuelle. 
+				var maintenant = new Date();
+				// calucl en secondes de l'heure actuelle
+				var t_actu=maintenant.getHours()*3600 + maintenant.getMinutes()*60 + maintenant.getSeconds();
+				
+				// différence en secondes entre les deux heures. 
+				var resultat=t_final-t_actu;
+				var result;
+				// si resultat est positif, on garde la valeur sinon on inverse.
+				if(resultat>0){result=resultat;}else{result=-resultat;}
+				
+				// on recupere heures ,minutes et secondes en divisant, on utilise le modulo pour garder le reste de chaque division
+				// Heures : on divise par 3600 et on arrondi à l'inférieur - le modulo nous donne le reste de la division en secondes
+				var h_restant=Math.floor(result/3600); var reste_div_h_restant=result%3600;
+				// minutes : on divise le reste de la division par 60 et on arrondis à l'inférieur - le modulo nous donne le reste en secondes
+				var m_restant=Math.floor(reste_div_h_restant/60); var s_restant=reste_div_h_restant%60;
+				
+				//affichage des résultats en fonction de resultat positif ou négatif. 
+				if(resultat>0){
+				alert("il reste : "+h_restant+" heures "+m_restant+" minutes "+s_restant+" secondes avant la fin du cours.");
+				} else {
+				alert("l'heure est dépassée de : "+h_restant+" heures "+m_restant+" minutes "+s_restant+" secondes depuis la fin du cours.");
+				}
+			}
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<h1 onclick="temps_restant_sol_1(17,00,00);">Titre</h1>
+		<div>
+			<div>
+				<h2 onclick="temps_restant_sol_1(10,00,00);">Titre 1</h2>
+				<p>paragraphe <span>1.1</span></p>
+				<p>paragraphe <span>1.2</span></p>
+				<p>paragraphe <span>1.2</span></p>
+			</div>
+			<div>
+				<h2>Titre 2</h2>
+				<p>paragraphe <span>2.1</span></p>
+				<p>paragraphe <span>2.2</span></p>
+				<p>paragraphe <span>2.3</span></p>
+			</div>
+		</div>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

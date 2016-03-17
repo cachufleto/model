@@ -1,0 +1,47 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+/**
+ *
+ * STYLE PERSO
+ *
+ */
+ 
+.starter-template h1 span {
+	color: steelblue;
+}
+.message {
+	padding: 10px;
+	border-radius: 5px;
+	text-align: center;
+	font-style: italic;
+	font-size: 14px;
+	border: 1px solid #333;
+	width: 50%;
+	margin: 20px auto 0 auto;
+}
+.texte_gras {
+	font-weight: bold;
+}
+.texte_italic {
+	font-style: italic;
+}
+
+.profil span {
+	display: inline-block;
+	width: 140px;
+	color: steelblue;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+/**
+ * @file
+ * Test ifocop-clear()
+ */
+#test-ifocop-clear {
+  /* Test ifocop-clear() */
+  clear: left;
+  /* Test ifocop-clear() with $ifocop-float-direction: right */
+  clear: right;
+  /* Test ifocop-clear(left) */
+  clear: left;
+  /* Test ifocop-clear(left, $reverse-all-floats: TRUE) */
+  clear: right;
+  /* Test ifocop-clear(left) with: $ifocop-reverse-all-floats: TRUE; */
+  clear: right;
+}

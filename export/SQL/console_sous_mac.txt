@@ -1,0 +1,8 @@
+http://social.hecube.net/blog/2009/07/30/mysql-phpmyadmin-administrer-une-base-de-donnees-mysql-via-la-console-mysql-et-phpmyadmin/
+
+Lancer le terminal
+
+Vous devez lancer le terminal. Cette application se trouve dans “Applications > Utilitaires > Terminal” (en passant le chemin sous la console elle-même est /Applications/Utilities/Terminal.app).
+Se connecter au client MySQL via /Applications/MAMP/Library/bin/mysql -u root -p, le mot de passe n’apparait pas en clair lorsque vous le saisissez.
+
+Sinon il y a toujours l'onglet SQL sous PHPMYADMIN.

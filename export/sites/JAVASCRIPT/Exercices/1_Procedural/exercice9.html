@@ -1,0 +1,37 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>JavaScript : Exercice 9</title>
+		<meta charset="UTF-8" />
+		<script type="text/javascript">
+			/*
+				Réalisez le programme (algorithme) suivant : Au CHARGEMENT du document, je demande à l'utilisateur de saisir un nombre. TANT QUE l'utilisateur n'a pas saisi un nombre, je lui demande de saisir un nombre.
+				
+				onload() -> prompt() // <- nombre
+				
+				Necessite l'utilisation de l'attribut d'évenement onload / de la fonction prompt() / de la fonction parseFloat() / de la fonction isNaN() / d'une boucle while...
+				
+				
+			*/
+			var  sisieNumber = function(){
+				var info = true;
+				var msg = 'Saisisez une information';
+				while(info){
+					info = prompt(msg);
+					info = (info == '' || isNaN(info))? true : false;
+					msg = 'Merci de saisier un chiffre';
+				}
+				alert('OK, Merci de votre visite!');
+			}
+			
+		</script>
+	</head>
+	<body onload="sisieNumber();">
+		<h1>Exercice 9 'onload()'</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

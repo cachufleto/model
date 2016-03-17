@@ -1,0 +1,73 @@
+Mickael Voirin
+crjpwork@gmail.com
+
+Javascript -> evolution constante est integré à fur et à mesure sur les navigateurs
+
+Duglas Crockford
+json -> language pour remplacer les bases de donnes
+MongoDB -> BDD qui utilise Json? à veifier
+
+Les nav intégre les interpretateurs
+JSscript et javaScript
+
+Oracle - Java
+
+dif:
+javaScript :
+interpretateurs navigateur
+dépendant du HTML
+Peut typé
+Les réferences des object sont verifié
+Les codes sont fonctionel
+Peut secure
+
+
+Java : 
+Module
+Indépendant d'autre languages
+Fortement typé, besoins de déclarer les variables
+idem que PHP, ils est lue avant execution et les erreurs bloquent le fonctionement
+Fortement securisé
+
+Javascript
+Creation des animation sur les pages
+exemeple: alsacreation.com choix du pseudo
+recherche : mdn alert
+toutjavascript.com
+
+Console de firebug
+montre les erreurs de codage
+pour les variables le type est selon les informations consignés
+une variable prent le type selon le comptenu
+
+alert() affiche un message.
+confirm() demande une confirmation du message et qui retourne Vrai ou Faux (true, false) boolean.
+prompt() permet la césie des information par le user et qui la retourne ('chaine de character' ou null) string.
+
+Une FONCTION est déclaré à l'interieur d'une variable
+Elle se doit déclarer par la possiblité ou non de recevoir des argument ()
+Elle se doit déclarer par la possibilité d'effectuer des instructions {}
+var nomDeMafonction = function(arg){ ...}
+XOR n'existe pas en javasScript, il faut donc creer ca propre fonction
+
+
+CSS: SMACSS
+disk
+lokisalle
+|
+|-/ css
+|
+|-/ js
+|
+|-/ inc
+|
+|-/ admin / log
+|
+|-/ func
+|
+|-/ photo / vignetes
+|         / hd
+|
+|-/ img
+|
+|-/ fonts

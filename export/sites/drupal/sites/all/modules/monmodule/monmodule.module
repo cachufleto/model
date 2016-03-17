@@ -1,0 +1,129 @@
+<?php
+
+// implementation du module
+
+function monmodule_menu(){
+	
+	$item = array();
+	$item['admin/annuaire'] = array(
+		'title' => 'Annuaire',
+		'description' => 'Formulaire pour annuaire',
+		// function DRUPAL à appeler pour ce momdule
+		'page callback' => 'drupal_get_form', // generateur de formulaire
+		'page arguments' => array('monmodule_form'), // construction du formulaire
+		'type' => MENU_NORMAL_ITEM, // lien accessible
+		'access callback' => true, // obligatoire
+	);
+	
+	return $item;
+
+}
+
+// hook_form()
+// $form: le formulaire à éditer
+// &form_state: un tableau ARRAY
+
+function monmodule_form($form, &$form_state){
+	
+	$form['nom'] = array(
+		'#type' => 'textfield',
+		'#title' => 'Votre nom',
+		'#size' => 10,
+		'#maxlength' => 20,
+		'#description' => 'Veuillez saisir votre nom'
+	);
+	
+	$form['prenom'] = array(
+		'#type' => 'textfield',
+		'#title' => 'Votre prénom',
+		'#size' => 10,
+		'#maxlength' => 20,
+		'#description' => "Veuillez saisir votre prénom",
+		'#required' => true
+	);
+	
+	$form['telephone'] = array(
+		'#type' => 'textfield',
+		'#title' => 'Votre téléphone',
+		'#size' => 10,
+		'#description' => "Veuillez saisir votre téléphone",
+		'#required' => true
+	);
+	
+	$form['submit_boutton'] = array(
+		'#type' => 'submit',
+		'#value' => 'Ok'
+	);
+	
+	return $form;
+
+}
+
+
+function monmodule_form_validate($form, &$form_state) {
+  if (isset($node->end) && isset($node->start)) {
+    if ($node->start > $node->end) {
+      form_set_error('time', t('An event may not end before it starts.'));
+    }
+  }
+}
+
+// /modules%21form%21submit.api.php/function/hook_form_submit/7
+
+function monmodule_form_submit($form, $form_state){
+	
+	drupal_set_message('Contact enrtegistré !');
+	db_insert('monmodule_annuaire')
+		->fields(array(
+			'prenom' => $form_state['values']['prenom'],
+			'nom' => $form_state['values']['nom'],
+			'telephone' => $form_state['values']['telephone']
+		))
+		->execute();
+
+}
+
+
+// /modules%21block%21block.api.php/function/hook_block_info/7
+function monmodule_block_info(){
+
+	$blocks['monmodule_affichage'] = array(
+		'info' => 'Block permetant l\'affichage de l\'annuaire',
+		'cache' => DRUPAL_CACHE_PER_ROLE
+	);
+	
+	return $blocks;
+}
+
+// /modules%21block%21block.api.php/function/hook_block_view/7
+function monmodule_block_view($delta = ''){
+
+	$block['subject'] = 'Affichage des contacts';
+	$block['content'] = '';
+	
+	if(user_access('access content')){
+		
+		$result = db_query("SELECT * FROM monmodule_annuaire");
+		if($result->rowCount() > 0){
+			
+			$plus = ($result->rowCount() > 1)? 's' : '';
+			$block['content'] .= 'Il y a '. ($result->rowCount()) . 'contact'.$plus;
+			$block['content'] .= '<ul>';
+			
+			foreach($result as $data){
+				$block['content'] .= '<li>';		
+				$block['content'] .= (!empty($data->nom))? $data->nom . ' - ' : '';
+				$block['content'] .= $data->prenom;		
+				$block['content'] .= ' : ';		
+				$block['content'] .= $data->telephone;		
+				$block['content'] .= '</li>';				
+			}
+			
+			$block['content'] .= '</ul>';
+			
+		}else{
+			$block['content'] .= 'Pas de contact dans l\'annuaire !';
+		}
+	}
+	return $block;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>JavaScript : Exercice 19</title>
+		<meta charset="UTF-8" />
+		<script type="text/javascript"> 
+			/*
+				Enoncé :
+				- Créez 5 documents Web. Au CHARGEMENT du 1er document Web, affichez un popup vers le 2nd document Web.
+				- Juste avant la fermeture du 2ème document Web, déclencher l'apparition d'une popup vers le 3ème.
+				- Juste avant la fermeture du 3ème document Web, déclencher l'apparition d'une popup vers le 4ème.
+				- Juste avant la fermeture du 4ème document Web, déclencher l'apparition d'une popup vers le 5ème.
+				- Juste avant la fermeture du 5ème document Web, déclencher l'apparition d'une popup vers le 1er.
+				- Juste avant la fermeture du 1er, declenchez l'apparition des 5 popup d'un coup !!!
+				Pensez à desactiver le bloqueur de PopUp de votre navigateur pour faire vos tests.
+			*/
+			
+			var links = new Array;
+			// links['Google'] = 'http://google.fr';
+			links['php'] = 'http://php.net';
+			links['carlos'] = 'http://192.168.105.218/JAVASCRIPT';
+			links['MDN'] = new Array;
+			links['MDN'][0] = 'https://developer.mozilla.org/fr/docs/Web';
+			links['MDN'][1] = 'http://192.168.218/domoquick/PHP/php_partie_3/maboutique/'];
+			links['carlos2'] = 'http://192.168.105.218/JAVASCRIPT';
+			
+			// 
+			var popup = function(){
+			
+				if(1){
+				
+				if(?ok)
+				for (var tag in links){
+				
+					open(links.tag, tag,'directories=no,menubar=no');
+				}
+				else open(links['moi'], 'pop','directories=no,menubar=no');
+				}
+				
+			}
+
+		</script>
+	</head>
+	<body onbeforeunload="popup();">
+		<h1>Exercice 19</h1>
+		<p>Mon nouveau document</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

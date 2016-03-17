@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+	<rss version="2.0">
+		<channel>
+			<title> Flux dynamique </title>
+			<link>http://www.monsiteperso.fr</link>
+			<description>Flux rss du site</description>
+			<pubDate>2016-01-06 16:21:48</pubDate><item>
+	<title>dfhdfsh</title>
+<description>dfhdfsh</description>
+<link>http://www.monsiteperso.fr/articles.php?id=6</link>
+<pubDate>2016-01-06 16:21:48</pubDate>
+</item>
+<item>
+	<title>Mon titre</title>
+<description>Ma descrpition</description>
+<link>http://www.monsiteperso.fr/articles.php?id=5</link>
+<pubDate>2016-01-06 16:14:30</pubDate>
+</item>
+<item>
+	<title>nouvelle du front</title>
+<description>nouvelle du front nouvelle du front nouvelle du front nouvelle du frontv nouvelle du frontnouvelle du front</description>
+<link>http://www.monsiteperso.fr/articles.php?id=3</link>
+<pubDate>2011-05-04 14:58:55</pubDate>
+</item>
+<item>
+	<title>actualité du lundi</title>
+<description>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </description>
+<link>http://www.monsiteperso.fr/articles.php?id=4</link>
+<pubDate>2011-05-03 14:59:00</pubDate>
+</item>
+<item>
+	<title>autre news</title>
+<description>ceci est une autre news <![CDATA[ < ]]>vxwcghfhqdfh fgh dfhgdfh sdf</description>
+<link>http://www.monsiteperso.fr/articles.php?id=2</link>
+<pubDate>2011-05-02 14:58:43</pubDate>
+</item>
+<item>
+	<title>premier article</title>
+<description>voici le premier article du blog</description>
+<link>http://www.monsiteperso.fr/articles.php?id=1</link>
+<pubDate>2011-05-01 14:58:10</pubDate>
+</item>
+</channel></rss>

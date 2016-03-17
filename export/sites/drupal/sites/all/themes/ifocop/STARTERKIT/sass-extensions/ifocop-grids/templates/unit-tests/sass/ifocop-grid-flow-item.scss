@@ -1,0 +1,81 @@
+/**
+ * @file
+ * Test ifocop-grid-flow-item()
+ */
+
+@import "ifocop";
+
+#test-ifocop-grid-flow-item {
+  /* Test ifocop-grid-flow-item(1) without setting $column-count */
+  @include ifocop-grid-flow-item(1);
+
+  /* Test ifocop-grid-flow-item(1, 4) with 20px gutter */
+  @include ifocop-grid-flow-item(1, 4);
+
+  /* Test ifocop-grid-flow-item(1, 4) with 15px gutter */
+  $ifocop-gutter-width: 15px;
+  @include ifocop-grid-flow-item(1, 4);
+  $ifocop-gutter-width: 20px;
+
+  /* Test ifocop-grid-flow-item(1) with 5 columns, 20px gutter and $ifocop-grid-width: 1000px */
+  $ifocop-column-count: 5;
+  $ifocop-grid-width: 1000px;
+  @include ifocop-grid-flow-item(1);
+  $ifocop-column-count: 1;
+  $ifocop-grid-width: 100%;
+
+  /* Test ifocop-grid-flow-item(1) with 5 columns, 20px gutter, $ifocop-grid-width: 1000px, $alpha-gutter: true and $omega-gutter: false */
+  $ifocop-column-count: 5;
+  $ifocop-grid-width: 1000px;
+  @include ifocop-grid-flow-item(1, $alpha-gutter: true, $omega-gutter: false);
+  $ifocop-column-count: 1;
+  $ifocop-grid-width: 100%;
+
+  /* Test ifocop-grid-flow-item(1) with 5 columns, 20px gutter, $ifocop-grid-width: 1000px and $omega-gutter: false */
+  $ifocop-column-count: 5;
+  $ifocop-grid-width: 1000px;
+  @include ifocop-grid-flow-item(1, $omega-gutter: false);
+  $ifocop-column-count: 1;
+  $ifocop-grid-width: 100%;
+
+  /* Test ifocop-grid-flow-item(1, 4) with 15px gutter and $ifocop-float-direction: right */
+  $ifocop-gutter-width: 15px;
+  $ifocop-float-direction: right;
+  @include ifocop-grid-flow-item(1, 4);
+  $ifocop-gutter-width: 20px;
+  $ifocop-float-direction: left;
+
+  /* Test ifocop-grid-flow-item(1, 4) with 15px gutter and $alpha-gutter: true */
+  $ifocop-gutter-width: 15px;
+  @include ifocop-grid-flow-item(1, 4, $alpha-gutter: true);
+  $ifocop-gutter-width: 20px;
+
+  /* Test ifocop-grid-flow-item(1, 4) with 15px gutter and $omega-gutter: false */
+  $ifocop-gutter-width: 15px;
+  @include ifocop-grid-flow-item(1, 4, $omega-gutter: false);
+  $ifocop-gutter-width: 20px;
+
+  /* Test ifocop-grid-flow-item(3, 4) with 20px gutter and $alpha-gutter: true */
+  @include ifocop-grid-flow-item(3, 4, $alpha-gutter: true);
+
+  /* Test ifocop-grid-flow-item(3, 4) with 20px gutter and $omega-gutter: false */
+  @include ifocop-grid-flow-item(3, 4, $omega-gutter: false);
+
+  /* Test ifocop-grid-flow-item(1, 4) with 15px gutter, $ifocop-float-direction: right and $alpha-gutter: true */
+  $ifocop-gutter-width: 15px;
+  $ifocop-float-direction: right;
+  @include ifocop-grid-flow-item(1, 4, $alpha-gutter: true);
+  $ifocop-gutter-width: 20px;
+  $ifocop-float-direction: left;
+
+  /* Test ifocop-grid-flow-item(1, 4) with $ifocop-box-sizing: content-box and 10% gutter */
+  $ifocop-gutter-width: 10%;
+  $ifocop-box-sizing: content-box;
+  @include ifocop-grid-flow-item(1, 4);
+  $ifocop-gutter-width: 20px;
+  $ifocop-box-sizing: border-box;
+
+  /* Test ifocop-grid-flow-item(1, 4) with $ifocop-auto-include-flow-item-base: false */
+  $ifocop-auto-include-flow-item-base: false;
+  @include ifocop-grid-flow-item(1, 4);
+}

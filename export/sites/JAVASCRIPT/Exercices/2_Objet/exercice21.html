@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>JavaScript : Exercice 21</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript"> 
+			//Enoncé :
+			/*
+				Ci-dessous 2 déclarations d'objet (à ne pas modifier) :
+			*/
+			var monObjet = {
+				e:function(){
+					alert(this.t);
+				},
+				r:true,
+				t:'Ceci est un texte dans un objet'
+			};
+
+			var monAutreObjet = {
+				e:[function(){
+					alert('Vous êtes ici !');
+				},true],
+				r:false,
+				t:function(){
+					this.y = {
+						e:function(){
+							alert('Ou suis je ? Qui suis je ?');
+						}
+					};
+					alert('Desormais ma propriété y contient un objet');
+				}
+			};
+
+			/*
+				0. Dessinez sur une feuille la structure d'information en mémoire dans la variable monObjet et dans la variable monAutreObjet
+			*/
+
+			/*
+				1. Affichez dans une boite de dialogue le contenu de la propriété r de l'objet dans la variable monObjet.
+			*/
+			
+			// alert(monObjet.r);
+
+			/*
+				2. Affichez dans une boite de dialogue le contenu de la propriété r de l'objet dans la variable monAutreObjet.
+			*/
+			
+			// alert(monAutreObjet.r);
+			
+
+			/*
+				3. Déclenchez la méthode située en première position dans le tableau dans la propriété e de l'objet contenu dans la variable monAutreObjet (si vous réussissez le texte 'Vous êtes ici !' devrez s'afficher).
+			*/
+			
+			// monAutreObjet.e[0]();
+
+			/*
+				4. Mettez l'objet contenu dans la variable monAutreObjet dans une propriété y de l'objet contenu dans la variable monObjet (Vous allez donc mettre un objet dans une - nouvelle - propriété d'un autre objet)
+			*/
+			
+			// y possede l'objet monAutreObjet
+			monObjet.y = monAutreObjet;
+			
+
+			/*
+				5. Déclenchez la méthode situé dans la propriété t dans l'objet situé dans la propriété y contenue dans l'objet contenu dans la variable monObjet. Si vous réussissez, le message 'Désormais ma propriété y contient un objet' devrait s'afficher.
+				exec t de y
+			*/
+			
+			alert('monObjet.y.t()'); // affiche 'Desormais ma propriété y contient un objet'
+			monObjet.y.t();
+			// ATTENTION ce ci produit une alert suppelementaire "undefined"
+
+			/*
+				6. Déclenchez la méthode situé dans la propriété e de l'objet nouvellement créé dans la propriété y lors de l'execution de la précédente méthode. Si vous réussissez, vous devriez voir s'afficher successivement les textes  : 'Ou suis je ? Qui suis je ?'.
+			*/
+			//alert('monObjet.y.e()'); // affiche 'Vous êtes ici !'
+			//monObjet.y.e[0]();
+			
+			//alert('monObjet.y.y.e()'); // affiche 'Ou suis je ? Qui suis je ?'
+			//monObjet.y.y.e();
+			
+
+		</script>
+	</head>
+	<body>
+		<h1>Titre</h1>
+		<div>
+			<div>
+				<h2>Titre 1</h2>
+				<p>paragraphe <span>1.1</span></p>
+				<p>paragraphe <span>1.2</span></p>
+				<p>paragraphe <span>1.2</span></p>
+			</div>
+			<div>
+				<h2>Titre 2</h2>
+				<p>paragraphe <span>2.1</span></p>
+				<p>paragraphe <span>2.2</span></p>
+				<p>paragraphe <span>2.3</span></p>
+			</div>
+		</div>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

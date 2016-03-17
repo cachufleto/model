@@ -1,0 +1,78 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>JavaScript : Exercice 17bis</title>
+		<meta charset="UTF-8" />
+		<script type="text/javascript"> 
+			//Le code 1 ne fonctionne pas, le code 2 fonctionne. Pourquoi à votre avis ?
+
+			//Code 1 :
+			/*
+			var a = function(){
+				var texte = 'ici';
+			}
+
+			var b = function(){
+				alert(texte);
+			}
+
+			a();
+			b();
+			*/
+
+			//Code 2 :
+			
+			
+			// toutes les variables externes sont globals
+			// elles peuvent être utilisées à l'interieur des functions sans les transmêttre
+			var texte = 'DEBUT';
+			alert(texte);
+				
+			var a = function(){
+				
+				
+				// ALERT
+				// ALERT
+				
+				// ce ci affecte la variable externe
+				texte = 'ici';
+				alert(texte);
+				
+				// ALERT
+				// ALERT
+				
+				// variable local
+				// ceci pose une problematique par la suite
+				// il rend la variable local et empeche l'affectation des valeurs à la variable externe
+				var texte = 'dans la fonction';
+				alert(texte);
+				
+			}
+
+			var c = function(){
+				
+				// variable local
+				var texte = 'dans la fonction';
+			}
+
+
+			var b = function(){
+				alert(texte);
+			}
+
+			a();
+			c();
+			b();
+			
+		</script>
+	</head>
+	<body>
+		<h1>Variables externes!</h1>
+		<p>toutes les variables externes sont globals<br>
+		elles peuvent être utilisées à l'interieur des functions sans les transmêttre
+		</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

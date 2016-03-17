@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--?xml-stylesheet href="ifocop.css" type="text/css" ?-->
+<?xml-stylesheet href="villes_du_sud.xsl" type="text/xsl" ?>
+
+<contenu>
+	<titre>
+		<![CDATA[ << ]]> &lt; Quelques villes du Sud de la France <![CDATA[ >> ]]>
+	</titre>
+	<port> 
+		<nom>Miramar</nom>
+	</port>
+	<ville>
+		<nom>Toulon</nom>
+		<specificite>La rade - Le Mont Faron</specificite>
+	</ville>
+	<ville>
+		<nom>Nice</nom>
+		<specificite>La promenade des anglais</specificite>
+	</ville>
+	<ville>
+		<nom>Cannes</nom>
+		<specificite>La Croisette</specificite>
+	</ville>
+	<ville>
+		<nom>La Londe les Maures</nom>
+		<specificite>La plage de l'Argentière</specificite>
+	</ville>
+	<port> 
+		<nom>La Boca</nom>
+	</port>
+</contenu>

@@ -1,0 +1,17 @@
+Un client vient vous voir la réalisation de son site.
+Ce client est l'illustre professeur Jean-Yves Delattre
+(un chercheur connu) qui voudrait sur son site pré"senter toutes ses publication scientifiques.
+
+Il vous informe que le site américain PubMed recense toutes les publications médicales scientifiques du monde entier.
+
+Cherchez sur ce site le moyen de récupérer un fichier xml contenant toutes les publications. (Cheatcode : son nom d'auteur est DELATTRE JY)
+
+Une fois le fichier récupéré, le manipuler en php pour faire apparaitre :
+- le PMID
+- le lien vers l'articcle sur le site PubMed
+- le titre de l'article
+- le résumé de l'article
+- le journal/revue  où est paru l'article
+- la date de publication sur PubMed
+
+Si vous avez le temps, insérez ces infos dans une base de données

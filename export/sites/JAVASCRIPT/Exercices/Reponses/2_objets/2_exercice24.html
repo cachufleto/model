@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>JavaScript : Exercice 24</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript"> 
+			//Enoncé :
+			/*
+				En JavaScript la plupart des fonctions de base du langage sont en réalité des méthodes disponibles dans des objets. On dispose par exemple, de base, d'une classe Date. Cette classe détaille un ensemble de méthode pour gérer le temps. Cette classe n'a pas besoin d'information pour la construction.
+			*/
+
+			/*
+				1. Créez un nouvel objet de type Date dans la mémoire.
+			*/
+			
+			
+			/*
+				2. Ci-après consultez la liste des méthode de l'objet construit avec Date à cette adresse http://www.commentcamarche.net/contents/571-javascript-l-objet-date (en bas de page).
+			*/
+			
+			/*
+				3. Utilisez l'objet créé pour que Quand je clique sur mon titre H1, j'affiche dans une boite de dialogue le nombre d'heures, de minutes et de secondes avant la fin du cours à (17:00:00)
+			*/
+			
+			var maFonction=function(){
+				
+				// conversion en secondes de l'heure actuelle
+				var maDateActuelle = new Date();
+				
+				var heures_actuelles=maDateActuelle.getHours();
+				heures_actuelles=heures_actuelles*3600;
+				
+				var minutes_actuelles=maDateActuelle.getMinutes();
+				minutes_actuelles=minutes_actuelles*60;
+				
+				var secondes_actuelles=maDateActuelle.getSeconds();
+				
+				var total_secondes_actuelles=heures_actuelles+minutes_actuelles+secondes_actuelles;
+				
+				// conversion en seconde de l'heure de fin
+				var heure_fin = 17*3600; 
+				
+				// différence en seconde
+				var difference=heure_fin-total_secondes_actuelles;
+				
+				// recuperation en heure, minutes et secondes.
+				//heure + reste en seconde
+				var diff_heure = Math.floor(difference/3600);
+				var reste_heure = difference%3600;
+				//minutes + reste seconde
+				var diff_minutes= Math.floor(reste_heure/60);
+				var reste_secondes = reste_heure%60;
+				
+				//resultat
+				alert("Il reste "+diff_heure+" h "+diff_minutes+" min "+reste_secondes+" sec avant la fin du cours (17h)");
+				
+			}
+			maFonction();
+			
+		</script>
+	</head>
+	<body>
+		<h1>Titre</h1>
+		<div>
+			<div>
+				<h2>Titre 1</h2>
+				<p>paragraphe <span>1.1</span></p>
+				<p>paragraphe <span>1.2</span></p>
+				<p>paragraphe <span>1.2</span></p>
+			</div>
+			<div>
+				<h2>Titre 2</h2>
+				<p>paragraphe <span>2.1</span></p>
+				<p>paragraphe <span>2.2</span></p>
+				<p>paragraphe <span>2.3</span></p>
+			</div>
+		</div>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

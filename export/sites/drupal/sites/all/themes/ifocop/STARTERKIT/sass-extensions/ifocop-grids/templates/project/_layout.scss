@@ -1,0 +1,117 @@
+/**
+ * @file
+ * Layout styles.
+ *
+ * We use example breakpoints of 444px, 666px, 777px, 999px and 1111px. The
+ * right breakpoints to use for your site depend on your content.
+ */
+
+.centered {
+  @include ifocop-grid-background();
+  padding: {
+    top: 1.5em;
+    bottom: 1.5em;
+  }
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  max-width: 1111px;
+}
+
+/* Set the shared properties for all grid items. */
+%grid-item,
+.grid-item {
+  @include ifocop-grid-item-base();
+}
+
+/* Set the container for our grid items. */
+.main {
+  @include ifocop-grid-container();
+}
+
+/* Horizontal navigation bar */
+@media all and (min-width: 444px) {
+  $ifocop-column-count: 1;
+  $navbar-height: 5em;
+
+  .main {
+    padding-top: $navbar-height;
+  }
+  .grid-item__menu {
+    @include ifocop-grid-item(1, 1);
+    margin-top: -$navbar-height;
+    height: $navbar-height;
+  }
+}
+
+@media all and (min-width: 444px) and (max-width: 665px) {
+  $ifocop-column-count: 2;
+
+  .centered {
+    @include ifocop-grid-background();
+  }
+  .grid-item__content {
+    @include ifocop-grid-item(2, 1);
+  }
+  .grid-item__aside1 {
+    @include ifocop-clear(); // Clear left-floated elements (.grid-item__content)
+    @include ifocop-grid-item(1, 1);
+  }
+  .grid-item__aside2 {
+    @include ifocop-grid-item(1, 2);
+  }
+}
+
+@media all and (min-width: 666px) and (max-width: 776px) {
+  $ifocop-column-count: 3;
+
+  .centered {
+    @include ifocop-grid-background();
+  }
+  .grid-item__content {
+    @include ifocop-grid-item(2, 1);
+  }
+  .grid-item__aside1 {
+    @include ifocop-grid-item(1, 1, right); // Position from the right
+  }
+  .grid-item__aside2 {
+    @include ifocop-clear(); // Clear left-floated elements (.grid-item__content)
+    @include ifocop-grid-item(2, 1);
+  }
+}
+
+@media all and (min-width: 777px) and (max-width: 998px) {
+  $ifocop-column-count: 3;
+
+  .centered {
+    @include ifocop-grid-background();
+  }
+  .grid-item__content {
+    @include ifocop-grid-item(2, 1);
+  }
+  .grid-item__aside1 {
+    @include ifocop-grid-item(1, 1, right); // Position from the right
+  }
+  .grid-item__aside2 {
+    @include ifocop-clear(right); // Clear right-floated elements (.grid-item__aside1)
+    @include ifocop-grid-item(1, 1, right);
+  }
+}
+
+@media all and (min-width: 999px) {
+  $ifocop-column-count: 5;
+
+  .centered {
+    @include ifocop-grid-background();
+  }
+  .grid-item__content {
+    @include ifocop-grid-item(3, 2);
+  }
+  .grid-item__aside1 {
+    @include ifocop-grid-item(1, 1);
+  }
+  .grid-item__aside2 {
+    @include ifocop-grid-item(1, 5);
+  }
+}

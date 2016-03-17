@@ -1,0 +1,46 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>JavaScript : Exercice 10</title>
+		<meta charset="UTF-8" />
+		<script type="text/javascript">
+			/*
+				Réalisez le programme (algorithme) suivant : Quand je CLIQUE sur le deuxième paragraphe, j'oblige l'utilisateur à saisir un nombre. PUIS, je l'OBLIGE à saisir un second nombre. PUIS, j'affiche une B.d.D avec le résultat du calcul de la somme des deux nombres.
+
+				Nécessite l'utilisation de l'attribut d'événement onclick / de la fonction prompt() / de la fonction alert() / de la fonction parseFloat() / de la fonction isNaN() / de boucles while...
+			*/
+			
+			var  sisieNumber = function(arg){
+				var info = true;
+				var infoNumber = 0;
+				var msg = 'Saisisez une '+ arg +' information';
+				
+				while(info){
+					infoNumber = prompt(msg);
+					info = (infoNumber == '' || isNaN(infoNumber))? true : false;
+					msg = 'Merci de saisier un chiffre';
+				}
+				
+				return parseFloat(infoNumber);
+			}
+			
+			// fonction saisie
+			var  saisie = function(arg){
+				var info1 = sisieNumber('premiere');
+				var info2 = sisieNumber('deuxiemme');
+				
+				alert(info1+info2);
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<h1>Exercice 10</h1>
+		<p>Premier paragraphe</p>
+		<p onclick="saisie();">Deuxième paragraphe clickable</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>JavaScript : Exercice 0</title>
+		<meta charset="UTF-8" />
+		<script type="text/javascript" src="exercice0.js"></script>
+		<script type="text/javascript">
+//				Quand on programme en JavaScript en prend l'habitude déclarer une function dans l'entête comme ça :
+			/* var maFonction = function(arg){
+				alert('La fonction alert est déclenchée depui '+arg);
+			}; */
+
+			/* Cette fonction est donc, désormais, en mémoire disponible dans l'emplacement (la variable) maFonction. On peut, à partir de cette ligne, utiliser maFonction partout dans le document dans les emplacements réservés aux scripts JavaScript.	*/
+
+			/* 1. Exécuter la fonction maFonction ICI (i.e : après ce commentaire). */
+			maFonction();
+
+			/* 2. Exécuter la fonction maFonction AU moment où on clique sur le premier paragraphe. Il faut utiliser l'attribut d'évenement onclick. */
+			var premierP = function(arg){
+				maFonction(arg);
+			}
+			/* 3. Exécuter la fonction maFonction APRES le chargement du document. Il faut utiliser l'attribut d'événement onload.*/
+
+			/* 4. Exécuter la fonction maFonction APRES que le navigateur ait chargé et affiché le premier paragraphe et AVANT qu'il ait chargé et affiché le second paragraphe. */
+
+			/* 5. Créer un fichier externe. Copiez-y la déclaration de fonction maFonction. Supprimer la fonction de ce bloc de scripts. Indiquez au navigateur qu'il doit télécharger ce fichier et l'incorporer dans ce document. Toutes les exécutions de la fonction maFonction (de la 1 à la 4) doivent fonctionner.*/
+			
+		</script>
+	</head>
+	<body onload="maFonction('BODY')">
+		<h1>Exercice 0</h1>
+		<p onclick="premierP('Parragraphe 1');">Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<script>
+			maFonction('Dans le corp');
+		</script>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

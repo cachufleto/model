@@ -1,0 +1,6 @@
+; TOKEN Mon Token
+name  = montoken
+description = Mon Token Personnalisé
+core = 7.x
+dependencies[] = token
+package = Groupe DIWoo

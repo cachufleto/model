@@ -1,0 +1,8 @@
+Un client viens vous voire pour la realisation de son site.
+Ce client es l'illustre professeur Jean-Yves Delattre (un chercheur connu) qui voudrait sur son site présenter toutes ses publications scientifiques.
+
+Il vous informe que le site américain PubMed recense toutes les publications médicales scientifiques du monde entier.
+
+Chercher sur ce site le moyens de récupérer un fichier xml contenant toutes les publications. (heatcode: son nom d'auteur est DELATTRE JY).
+
+Une fois le fichier récupéré, le manipuler

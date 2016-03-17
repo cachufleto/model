@@ -1,0 +1,57 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>JavaScript : Exercice 15</title>
+		<meta charset="UTF-8" />
+		<script type="text/javascript"> 
+			/*
+				Réalisez le programme (algorithme) suivant:
+
+				Quand je CLIQUE sur mon paragraphe,
+
+				TANT QUE je n'ai pas choisi d'ouvrir une nouvelle fenêtre (vers Google ou autre) :
+
+					Quand je CLIQUE sur mon paragraphe, une B.d.D me demande si je souhaite aller sur Google. Si je clique sur oui, j'ouvre une fenêtre vers Google. SINON, j'affiche une B.d.D avec un champ de saisie avec le texte : "Veuillez saisir l'url d'un site alternatif". SI l'utilisateur saisi un texte, ce texte est utilisé comme url pour ouvrir une nouvelle fenêtre SINON un message s'affiche dans une b.d.d avec le texte : "Tant pis !"
+
+
+				En bref, il s'agit de créer une boucle qui OBLIGE l'utilisateur à ouvrir une nouvelle fenêtre vers google ou un site alternatif de son choix.
+			*/
+			var  saisieURL = function(arg){
+				var info = true;
+				var infoURL = '';
+				var msg = 'Saisisez une '+ arg +' de la forme "www.google.fr"';
+				
+				while(info){
+					infoURL = prompt(msg);
+					info = (infoURL != null && isNaN(infoURL))? false : true;
+					msg = 'Veuillez saisir l\'url d\'un site alternatif';
+				}
+				
+				return infoURL;
+			}
+			
+			var url = function(){
+				
+				var link = confirm('Voulez vous aller sur Google.com ?');
+				
+				if(link) open('http://www.google.com','Google','directories=no,menubar=no');
+				else{
+				
+					link = saisieURL('URL');
+					
+					if(link == null) alert('ERREUR !');
+					else{
+						linkURL = 'http://' + link;
+						open(linkURL,link,'directories=no,menubar=no');
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<p onclick="url();">Exercice 15</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

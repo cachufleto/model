@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="bouteilles.xsl"  type="text/xsl" ?>
+<produits>
+<bouteille>
+	<marque>
+		Marque 1
+	</marque>
+	<composition>
+		Composé 1, composé 2
+	</composition>
+	<source>
+		<ville>
+			Paris 03
+		</ville>
+		<departement>
+			Paris
+		</departement>
+	</source>
+	<contenance>
+		25ml
+	</contenance>
+	<ph>
+		7
+	</ph>
+</bouteille>
+
+<bouteille>
+	<marque>
+		Marque 2
+	</marque>
+	<composition>
+		Composé 3, composé 2
+	</composition>
+	<source>
+		<ville>
+			Paris 05
+		</ville>
+		<departement>
+			Paris
+		</departement>
+	</source>
+	<contenance>
+		45ml
+	</contenance>
+	<ph>
+		5
+	</ph>
+</bouteille>
+</produits>

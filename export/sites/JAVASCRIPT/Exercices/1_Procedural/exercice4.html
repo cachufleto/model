@@ -1,0 +1,44 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>JavaScript : Exercice 4</title>
+		<meta charset="UTF-8" />
+		<script type="text/javascript">
+			/* Utilisons la fonction prompt(). Exécuter prompt('message') provoque l'affichage d'une B.d.D avec un champ de saisie. Cette fonction retourne la saisie de l'utilisateur.
+
+			/* Réalisez le programme (algorithme) suivant : Quand je CLIQUE sur le premier paragraphe, j'affiche une B.d.D contenant le message "Veuillez saisir un message.". PUIS, j'affiche la saisie de l'utilisateur dans une B.d.D.
+
+				Nécessite l'utilisation de l'attribut d'événement onclick / de la fonction prompt() / de la fonction alert()*/
+			var question = function(arg){
+				return prompt(arg);
+			}
+			
+			var message = function(){
+				
+				var reponse = false;
+				var message = 'saisit un texte et clique sur Ok !';
+				var i = 0;
+				
+				if(!(reponse = question("Veuillez saisir un message.")))
+					while(!(reponse = question(message)) && i<3){
+						i++;
+						message = message+ ' et ' +i;
+					}
+					
+				if(i==3) alert('Vous n\'est pas sage');
+				else alert('La valeur saisie est : ' + reponse);
+			}
+
+			/* Quelle information nous retourne la fonction prompt si l'utilisateur clique sur Annuler ? ne saisit rien et clique sur Ok ? saisit un texte et clique sur Ok ? */
+			
+		</script>
+	</head>
+	<body>
+		<h1>Exercice 4</h1>
+		<p onclick="message()">Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

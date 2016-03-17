@@ -1,0 +1,45 @@
+<?php
+// documentation https://api.drupal.org/api/drupal/includes%21module.inc/group/hooks/7
+
+function montoken_token_info() {
+
+	$info = array();
+	$info['types']['mes_tokens_persos'] = array(
+		'name' => 'Mes tokens perso',
+		'description' => 'Token de type perso',
+		);
+	
+	// on déclare nos Tokens
+	$info['tokens']['mes_tokens_persos']['tokenperso'] = array(
+		'name' => 'Token perso',
+		'description' => 'Un Token qui dit bonjour',
+		);
+	
+	return $info;
+}
+
+// hook_tokens
+// https://api.drupal.org/api/drupal/modules%21system%21system.api.php/function/hook_tokens/7
+
+function montoken_tokens($type, $tokens, array $data = array(), array $options = array()) {
+
+  $replacements = array();
+
+  if($type == 'mes_tokens_persos'){
+	  
+	  foreach($tokens as $name => $original){
+		  
+		  // on cherche notre token
+		  switch($name){
+			  
+				case 'tokenperso':
+					$value = 'Bonsoir à tous !';
+					// on affecte maintenant sa valeur
+					$replacements[$original] = $value;
+				break;
+		  }
+	  }
+  }
+
+  return $replacements;
+}

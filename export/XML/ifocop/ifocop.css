@@ -1,0 +1,32 @@
+bookstore {
+	color: red;
+}
+
+contenu{
+	margin-left:300px;
+	padding-top:50px;
+}
+
+titre{
+	font-size:2em;
+	color:red;
+	padding:10px;
+	display:block;
+}
+
+ville,
+nom,
+specificite{ 
+	display:block;
+	width:300px;
+	float:none;
+}
+
+ville nom,
+ville specificite
+{
+	background-color:yellow;
+}
+specificite{
+	display:none;
+}

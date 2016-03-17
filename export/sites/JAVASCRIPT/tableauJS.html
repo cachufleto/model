@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta  charset="Utf-8>">
+	</head>
+	<body>
+	
+		<h1>Varaibles : </h1>
+		<script type="text/javascript">
+			var nombre;
+			var texte;
+			nombre = 5;
+			texte = 'taxis';
+			alert(nombre + " " + texte);
+			
+			// tableau
+			var tableau = new Array('1');
+			
+			alert('tableau est un ' + typeof(tableau));
+			
+			// tableau
+			var tableau2 = ['1', 2];
+			
+			alert('tableau2 est un ' + typeof(tableau2));
+			
+			// passage à la ligne
+			alert('tableau2[1] est un ' + typeof(tableau2[1]) + '\n' + "Texte suplémentaire");
+			
+			var tableauDD = new Array();
+			tableauDD['semaine'] = ['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'];
+			tableauDD['mois'] = ['Janvier', 'Fevrier'];
+			
+			alert(
+				tableauDD.semaine[1] + ' / ' + tableauDD.mois[1]
+			)
+			
+		</script>
+	</body>
+</html>

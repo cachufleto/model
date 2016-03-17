@@ -1,0 +1,26 @@
+/**
+ * @file
+ * Test ifocop-float()
+ */
+
+@import "ifocop";
+
+#test-ifocop-float {
+  /* Test ifocop-float() */
+  @include ifocop-float();
+
+  /* Test ifocop-float() with $ifocop-float-direction: right */
+  $ifocop-float-direction: right;
+  @include ifocop-float();
+  $ifocop-float-direction: left;
+
+  /* Test ifocop-float(left) */
+  @include ifocop-float(left);
+
+  /* Test ifocop-float(left, $reverse-all-floats: TRUE) */
+  @include ifocop-float(left, $reverse-all-floats: TRUE);
+
+  /* Test ifocop-float(left) with: $ifocop-reverse-all-floats: TRUE; */
+  $ifocop-reverse-all-floats: TRUE;
+  @include ifocop-float(left);
+}

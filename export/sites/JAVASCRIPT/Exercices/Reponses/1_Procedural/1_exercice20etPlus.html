@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>JavaScript : Exercice 19</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript"> 
+			//Enoncés
+
+			/*
+			Créez une fonction qui renvoie le nombre de digits d’un nombre passé en argument.
+
+			Un « digit » est un des chiffres qui composent le nombre.
+
+			Exemple : pour 101, les digits sont 1, 0, 1, il y a donc 3 digits.
+			*/
+			var digit = function (){
+			var test = false;
+			while(!test){
+				var nombre = prompt('Veuillez saisir un nombre');
+				if(isNaN(nombre) || nombre=='')
+					{
+						alert('Vous devez saisir un nombre');
+					}
+				else
+					{
+						test = true;
+					};
+				};
+			var i=10;
+			var digit=1;
+			while (nombre>i){
+				i = i * 10;
+				digit = digit + 1;
+				};
+			alert (digit);	
+		}
+			/*
+			Créez une variable de type tableau contenant :
+				"Salut"
+				" "
+				"et"
+				" "
+				"bienvenue"
+
+			Affichez le contenu du tableau en utilisant plusieurs types de boucles :
+
+				for
+				for … in
+				while
+			*/
+			var affichage = function(){
+			var msg = ['Salut','et','bienvenue'];
+			var i = 0;
+			alert ('boucle for');
+			for(i; msg[i] != undefined; i++){
+					alert(msg[i]);
+				};
+			alert ('boucle for in');
+			for(j in msg){
+					alert(msg[j]);
+				};
+			alert ('boucle while');
+			var k = 0;
+			while(msg[k] != undefined){
+					alert(msg[k]);
+					k++;
+				}
+			};
+
+			/*
+			Faire une fonction qui prend en argument un tableau contenant des valeurs numériques, et qui trie ce tableau par ordre croissant.
+			Cette fonction devra pouvoir accepter un tableau de n’importe quelle taille.
+
+			Rappel : les tableaux sont vraiment modifiés par les fonctions.
+
+			Note : cette fonction existe déjà en javascript, elle s’appelle sort(), mais le but est de la refaire.
+
+			Exemple : 
+			tableau de départ [5 , 8, 13, 2]
+			à l’arrivée doit donner [2, 5, 8, 13]
+
+			Indice : il faut utiliser 2 boucles imbriquées
+			*/
+			
+			var tab = [7,2,35,4,89];
+
+			var classement = function (tab){
+				console.log(tab);
+				var longueur = tab.length;
+				var transit;
+				for (i=0; i < longueur; i++){
+					for (j=1+i; j < longueur; j++){
+						if(tab[i] > tab[j]){
+							transit = tab[i];
+							tab[i] = tab[j];
+							tab[j] = transit;
+						}
+					}
+				}
+				return tab;
+			}
+			
+			classement(tab);
+			
+			console.log(tab);
+			
+			/*
+			Une année est bissextile dans 2 cas :
+
+			-	Elle est divisible par 4 mais pas par 100
+
+			Ou
+
+			-	Elle est divisible par 400
+
+
+			Vous devez réaliser une fonction qui teste si une année donnée par l’utilisateur est bissextile.
+
+			1900 : n’est pas bissextile => divisible par 100 donc condition 1 fausse, et pas divisible par 400 donc condition 2 fausse
+			2000 : est bissextile => divisible par 400 donc condition 2 vraie (par contre condition 1 fausse mais pour le OU il suffit qu’une des deux soit vraie)
+			1904 : est bissextile => condition 1 vraie
+			2003 : n’est pas bissextile => conditions 1 et 2 fausses
+
+			Il est possible de faire des tests successifs, ou bien de créer des conditions complexes pour ne faire qu’un seul test.
+
+			L'opérateur % permet de calculer le reste des divisions successive du premier opérande par le second (ex: 10%2 donne 0, 10%3 donne 1) 
+			*/
+			var bissextile = function(){
+				var annee;
+				while(isNaN(parseFloat(annee)) || annee<0){
+					var annee = prompt('Entrez une année');
+				}
+				if((annee%4==0 && annee%100!=0) || annee%400==0){
+					alert('Votre annéee est bissextile');
+				}
+				else{
+					alert('Votre année n\'est pas bissextile');
+				}
+			}
+			
+			bissextile();
+			/*
+			Un fonction récursive est une fonction qui s'appelle elle même. On utilise généralement la récursivité en remplacement des boucles. Pour qu'une récursion s'arrête, il faut impérativement une condition de sortie qui oblige la machine à arrêter d'exécuter la fonction. Pour ce faire on utilise une condition ainsi qu'un return bien placé.
+
+			Transformer toutes les boucles des exercices précédents en fonctions récursives.
+			*/
+		</script>
+	</head>
+	<body>
+		<p>Mon nouveau document</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+Documentation : Codex - Le codex renferme toutes les informations techniques sur WordPress.
+-------------------------------------------------------------------------------------------
+
+Idée de template : http://codex.wordpress.org/images/9/96/wp-template-hierarchy.jpg
+WP_QUERY permet de rappatrier du contenu : http://codex.wordpress.org/Class_Reference/WP_Query
+Accueil de l'ancien CODEX : http://codex.wordpress.org/fr:Accueil
+Listes des fonctions ancien codex Wordpress  : http://codex.wordpress.org/Function_Reference
+Nouveau CODEX : https://developer.wordpress.org/reference/
+WIDGET : http://codex.wordpress.org/Function_Reference/the_widget
+WIDGET : https://codex.wordpress.org/Widgets_API
+PLUGIN : http://codex.wordpress.org/Plugin_API
+
+
+
+CONTACT FORM 7 (pour creation de formulaire)
+--------------
+TAC (verifie les themes)
+---
+ITHEMES SECURITY (sécurité du site +++)
+----------------
+JUIZ SOCIAL POST SHARER (reseaux sociaux)
+-----------------------
+SEARCH EVERYTHING (améliore la recherche du site)
+-----------------
+SIMPLE LIGHTBOX (lightbox)
+
+
+WOOCOMMERCE (ecommerce)
+-----------------------
+MAIL POET / WYSIJA (newsletter)
+-------------------------------
+
+
+CUSTOM POST TYPE UI (création de type de contenu)
+-------------------
+ADVANCED CUSTOM FIELDS (ACF) (pour rajouter des champs sur les types de contenu)
+-------------------
+QUERY WRANGLER (permet de créer des vues)
+
+
+
+
+
+
+
+

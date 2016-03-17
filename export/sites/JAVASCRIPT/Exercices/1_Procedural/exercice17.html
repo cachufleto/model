@@ -1,0 +1,61 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>JavaScript : Exercice 17</title>
+		<meta charset="UTF-8" />
+		<script type="text/javascript">
+			/*
+				Nouvelle fonction : setTimeout()
+			*/
+
+			/*
+				La fonction setTimeout() prend en ARGUMENTS :
+					- une fonction 
+					- un nombre (de millisecondes). 
+				Elle exécute la fonction en argument à la fin du compte à rebours. La fonction setTimeout() RETOURNE :
+					- un identifiant unique pour ce compte à rebours.
+
+				ex : setTimeout(function(){alert('TOTON') }, 3000);
+
+				On notera que setTimeout() prend en argument UNE FONCTION et PAS le résultat de l'exécution d'une fonction.
+			*/
+
+
+			/*
+				Énoncé :
+				- Afficher un message dans une B.d.D au bout de 5 sec.
+			*/
+
+			/*
+				Nouvelle fonction : setInterval()
+
+				La fonction setInterval() prend les même ARGUMENTS que setTimeout() et RETOURNE aussi un identifiant unique pour un intervalle.
+			*/
+
+			/*
+				Énoncé :
+				- Que fait la fonction setInterval() ? (Tester la fonction).
+			*/
+
+			/*
+				Nouvelle fonction : clearInterval(?)
+
+				La fonction setInterval() RETOURNE un nombre qui est un identifiant unique. La fonction clearInterval(?) prend en ARGUMENT cet identifiant et produit l'arrêt de la fonction setInterval(?) correspondant.
+			*/
+
+			/*
+				Énoncé :
+				- Quand je CLIQUE sur un paragraphe, démarrer une fonction setInterval() qui déclenche l'apparition d'une B.d.D au bout de 5 sec.
+				- Quand je CLIQUE sur un autre paragraphe, arrêter l'apparition de la B.d.D au bout de 5 sec. (si FireBug vous indique un bug du type maVariable is not defined, regardez l'exercice 17bis)
+			*/
+		</script>
+	</head>
+	<body>
+		<h1>Exercice 17</h1>
+		<p onclick="vidd=setTimeout(function(){ alert('TOTON'); }, 1000);">Activer</p>
+		<p onclick="clearInterval(vidd);">Desactiver</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

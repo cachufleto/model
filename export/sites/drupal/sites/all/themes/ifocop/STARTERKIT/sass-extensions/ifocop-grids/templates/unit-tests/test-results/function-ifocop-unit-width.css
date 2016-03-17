@@ -1,0 +1,18 @@
+/**
+ * @file
+ * Test ifocop-unit-width()
+ */
+#test-ifocop-unit-width {
+  /* Test ifocop-unit-width() with default $ifocop-column-count: 1 */
+  width: 100%;
+  /* Test ifocop-unit-width() with $ifocop-column-count: 5 */
+  width: 20%;
+  /* Test ifocop-unit-width(5) */
+  width: 20%;
+  /* Test ifocop-unit-width() with $ifocop-grid-width: 100px */
+  width: 100px;
+  /* Test ifocop-unit-width(5) with $ifocop-grid-width: 100px */
+  width: 20px;
+  /* Test ifocop-unit-width(5, 100px) */
+  width: 20px;
+}

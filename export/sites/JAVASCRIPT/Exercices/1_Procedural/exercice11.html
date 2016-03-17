@@ -1,0 +1,47 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>JavaScript : Exercice 11</title>
+		<meta charset="UTF-8" />
+		<script type="text/javascript">
+			/*
+				Dans l'exercice précédent, on a 2 blocs de code qui se ressemblent beaucoup. Ce sont les parties du programme qui permettent d'obliger l'utilisateur à saisir un nombre. On pourrait donc créer une fonction qui évite d'avoir à écrire 2 fois de suite des instructions quasi identiques. Écrivez cette fonction.
+			*/
+
+			/*
+				- La fonction peut pas ne se terminer TANT QUE l'utilisateur n'a pas saisi de nombre.
+				- La fonction prendra en ARGUMENT le message qui s'affichera à l'utilisateur lors de la saisie. 
+				- La fonction RETOURNE le nombre saisi par l'utilisateur. 
+			*/
+			var  sisieNumber = function(arg){
+				var info = true;
+				var infoNumber = 0;
+				var msg = 'Saisisez une '+ arg +' information';
+				
+				while(info){
+					infoNumber = prompt(msg);
+					info = (infoNumber == '' || isNaN(infoNumber))? true : false;
+					msg = 'Merci de saisier un chiffre';
+				}
+				
+				return parseFloat(infoNumber);
+			}
+			
+			// fonction saisie
+			var  saisie = function(arg){
+				var info1 = sisieNumber('premiere');
+				var info2 = sisieNumber('deuxiemme');
+				
+				alert(info1+info2);
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Exercice 11</h1>
+		<p>Premier paragraphe</p>
+		<p onclick="saisie();">Deuxième paragraphe clickable</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>
